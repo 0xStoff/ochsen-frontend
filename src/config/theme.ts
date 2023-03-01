@@ -1,10 +1,7 @@
-import { createTheme } from "@mui/material/styles";
+import { experimental_extendTheme as extendTheme } from "@mui/material";
 
-export const THEME = createTheme({
-    palette: {
-        mode: "dark"
-    },
+export const THEME = extendTheme({
     typography: {
         fontFamily: "Helvetica Neue",
-    }
+    },
 })
