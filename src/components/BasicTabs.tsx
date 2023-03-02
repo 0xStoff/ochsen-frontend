@@ -1,7 +1,7 @@
 import { IconButton, Typography } from "@mui/material";
-import { StickyTabsList, Tab, TabPanel } from "@config/styles";
-import { NAVIGATION } from "@config/text";
-import { NAVIGATION_PANELS } from "@config/components";
+import { StickyTabsList, Tab, TabPanel } from "../config/styles";
+import { NAVIGATION } from "../config/text";
+import { NAVIGATION_PANELS } from "../config/components";
 import { ShoppingBag } from "@mui/icons-material";
 import TabsUnstyled from '@mui/base/TabsUnstyled';
 import { ThemeButton } from "./ThemeButton";

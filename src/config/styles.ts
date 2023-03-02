@@ -1,34 +1,10 @@
 import TabUnstyled, { tabUnstyledClasses } from "@mui/base/TabUnstyled";
+import { blue, grey } from "@mui/material/colors";
 import TabPanelUnstyled from "@mui/base/TabPanelUnstyled";
 import TabsListUnstyled from "@mui/base/TabsListUnstyled";
 import { buttonUnstyledClasses } from "@mui/base/ButtonUnstyled";
 import { styled } from "@mui/system";
 
-const blue = {
-    50: '#F0F7FF',
-    100: '#C2E0FF',
-    200: '#80BFFF',
-    300: '#66B2FF',
-    400: '#3399FF',
-    500: '#007FFF',
-    600: '#0072E5',
-    700: '#0059B2',
-    800: '#004C99',
-    900: '#003A75',
-};
-
-const grey = {
-    50: '#f6f8fa',
-    100: '#eaeef2',
-    200: '#d0d7de',
-    300: '#afb8c1',
-    400: '#8c959f',
-    500: '#6e7781',
-    600: '#57606a',
-    700: '#424a53',
-    800: '#32383f',
-    900: '#24292f',
-};
 
 export const Tab = styled(TabUnstyled)`
       color: #fff;
@@ -66,12 +42,11 @@ export const Tab = styled(TabUnstyled)`
 export const TabPanel = styled(TabPanelUnstyled)(({ theme }) => `
       width: 100%;
       font-size: 0.875rem;
-      padding: 20px 12px;
+      padding: 30px 12px;
       background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
       border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
       border-radius: 12px;
       opacity: 0.6;
-      height: 5000px;
   `,);
 
 const TabsList = styled(TabsListUnstyled)(({ theme }) => `

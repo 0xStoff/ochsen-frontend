@@ -1,7 +1,7 @@
 import { Box, Container, Divider, Typography, useColorScheme } from "@mui/material";
-import { HOMEPAGE_CLAIM, HOMEPAGE_TITLE } from "@config/text";
-// import BasicTabs from "../components/BasicTabs";
-import { OCHSENLOGO } from "@config/assets";
+import { HOMEPAGE_CLAIM, HOMEPAGE_TITLE } from "../config/text";
+import BasicTabs from "../components/BasicTabs";
+import { OCHSENLOGO } from "../config/assets";
 import { Themes } from "../interfaces/Themes";
 
 
@@ -19,7 +19,7 @@ export const Home = () => {
                     <Typography variant="h5">{HOMEPAGE_CLAIM}</Typography>
                 </Box>
             </Container>
-            {/*<BasicTabs/>*/}
+            <BasicTabs/>
         </Box>
     )
 };
