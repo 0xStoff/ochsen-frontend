@@ -8,7 +8,7 @@ export const ThemeButton = () => {
     const theme = mode as Themes;
 
     const themeIcons = {
-        light: <DarkMode sx={{ color:"#fff" }}/>,
+        light: <DarkMode />,
         dark: <LightMode/>,
     };
 

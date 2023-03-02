@@ -7,8 +7,8 @@ import { THEME } from "./config/theme";
 export default function App() {
     return (
         <CssVarsProvider theme={THEME}>
-                <CssBaseline/>
-                <Home/>
+            <CssBaseline/>
+            <Home/>
         </CssVarsProvider>
 
     );

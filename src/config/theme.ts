@@ -4,4 +4,13 @@ export const THEME = extendTheme({
     typography: {
         fontFamily: "Helvetica Neue",
     },
+    components: {
+       MuiIconButton:{
+           styleOverrides:{
+               root: {
+                   color: "#fff"
+               }
+           }
+       },
+    }
 })
