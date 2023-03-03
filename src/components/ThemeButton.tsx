@@ -1,7 +1,7 @@
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { IconButton, useColorScheme } from "@mui/material";
+import { Themes } from "../interfaces/Themes";
 
-type Themes = 'dark' | 'light'
 
 export const ThemeButton = () => {
     const { mode, setMode } = useColorScheme();
@@ -9,7 +9,7 @@ export const ThemeButton = () => {
 
     const themeIcons = {
         light: <DarkMode />,
-        dark: <LightMode/>,
+        dark: <LightMode />,
     };
 
     const toggleMode = () => {
@@ -17,7 +17,7 @@ export const ThemeButton = () => {
     }
 
     return (
-        <IconButton onClick={toggleMode} aria-label="Light-Dark-Mode Button">
+        <IconButton aria-label="Light-Dark-Mode Button" onClick={toggleMode} sx={{ color: "#fff" }}>
             {themeIcons[theme]}
         </IconButton>
     )

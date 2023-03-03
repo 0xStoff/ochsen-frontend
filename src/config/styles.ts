@@ -7,6 +7,7 @@ import { styled } from "@mui/system";
 
 
 export const Tab = styled(TabUnstyled)`
+      font-family: Helvetica Neue;
       color: #fff;
       cursor: pointer;
       font-size: 0.875rem;
@@ -40,17 +41,12 @@ export const Tab = styled(TabUnstyled)`
       }`;
 
 export const TabPanel = styled(TabPanelUnstyled)(({ theme }) => `
-      width: 100%;
-      font-size: 0.875rem;
-      padding: 30px 12px;
-      background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
-      border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
+      border: 1px solid ${theme.palette.text.primary};
       border-radius: 12px;
       opacity: 0.6;
   `,);
 
 const TabsList = styled(TabsListUnstyled)(({ theme }) => `
-      min-width: 400px;
       background-color: ${blue[500]};
       border-radius: 12px;
       margin-bottom: 16px;
@@ -62,17 +58,17 @@ const TabsList = styled(TabsListUnstyled)(({ theme }) => `
       `,);
 
 
-export const StickyTabsList = styled(TabsList)(
-    ({ theme }) => `
-    position: sticky;
+export const StickyTabsList = styled(TabsList)(`
+    position: fixed;
     top: 0;
-    z-index: 1; /* make sure the sticky element is on top of other elements */
-    background-color: ${blue[500]};
-    border-radius: 12px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: space-between;
-    box-shadow: 0px 4px 30px ${theme.palette.mode === 'dark' ? grey[900] : grey[200]};
+    margin: 5px;
+    z-index: 1; 
+    `);
+
+export const StickyTabsListIcons = styled(TabsList)(`
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    z-index: 1; 
     `);
