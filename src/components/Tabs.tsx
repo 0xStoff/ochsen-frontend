@@ -9,19 +9,20 @@ import TabsUnstyled from '@mui/base/TabsUnstyled';
 import { ThemeButton } from "./ThemeButton";
 
 
-export default function BasicTabs() {
+export default function Tabs() {
     const tabRefs = useRef<TabRefs>({
         menu: null,
         openingHours: null,
         contact: null,
     });
 
-    const [activeTab, setActiveTab] = useState<keyof NavigationPanels>(
-        Object.keys(NAVIGATION_PANELS)[0] as keyof NavigationPanels
+    const [activeTab, setActiveTab] = useState<keyof NavigationPanels >(
+        // Object.keys(NAVIGATION_PANELS)[0] as keyof NavigationPanels
+        // null
     );
 
     useEffect(() => {
-        const ref = tabRefs.current[activeTab];
+        const ref = activeTab && tabRefs.current[activeTab];
         if (ref) {
             ref.scrollIntoView({ behavior: "smooth" });
         }

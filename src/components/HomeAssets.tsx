@@ -5,16 +5,20 @@ import { HomeAssetsProps } from "../interfaces/Home";
 import { OCHSENLOGO } from "../config/assets";
 import { Themes } from "../interfaces/Themes";
 
-export const HomeAssets: React.FC<HomeAssetsProps> = ({ dividerOrientation }) => { // specify the type of HomeAssets component props
+
+export const HomeAssets: React.FC<HomeAssetsProps>
+    = ({ dividerOrientation, ContainerElement }): JSX.Element => {
     const { mode } = useColorScheme();
     return (
-        <>
+        <ContainerElement>
             <img alt={OCHSENLOGO.alt} src={OCHSENLOGO.svg[mode as Themes]} width={OCHSENLOGO.imgWidth} />
-            <Divider flexItem orientation={dividerOrientation} sx={{ background: "#fff", margin: 5 }} />
-            <Box sx={{ alignSelf: "center" }}>
+            {dividerOrientation &&
+                <Divider flexItem orientation={dividerOrientation} sx={{ background: "#fff", margin: 5 }} />}
+            <Box sx={{ marginLeft: 10, alignSelf: "center" }}>
                 <Typography variant="h1">{HOMEPAGE_TITLE}</Typography>
                 <Typography variant="h5">{HOMEPAGE_CLAIM}</Typography>
             </Box>
-        </>
-    );
+        </ContainerElement>
+    )
+
 };

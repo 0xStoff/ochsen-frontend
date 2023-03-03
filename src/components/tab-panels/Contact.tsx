@@ -14,7 +14,7 @@ export default function Contact() {
     return (
         <>
             {Object.entries(CONTACT_INFORMATION).map(([key, value]) =>
-                <Typography key={key} variant="h2">{value}</Typography>
+                <Typography key={key} variant="h4">{value}</Typography>
             )}
             {/*<div style={{ width: 500, height: 500 }}>*/}
             {/*    <Map apiKey={apiKey} options={options} />,*/}

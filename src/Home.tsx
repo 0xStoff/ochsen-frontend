@@ -1,29 +1,25 @@
+import * as React from "react";
 import { Box, useMediaQuery } from "@mui/material";
 import { LandscapeContainer, PortraitContainer } from "./styles/Home";
-import BasicTabs from "./components/BasicTabs";
 import { HomeAssets } from "./components/HomeAssets";
-import React from "react";
 import { THEME } from "./config/theme";
+import Tabs from "./components/Tabs";
 
 export const Home = () => {
     const matches = useMediaQuery(THEME.breakpoints.up('md'));
 
     const getLandscapeContainer = () => (
-        <LandscapeContainer>
-            <HomeAssets dividerOrientation="vertical" />
-        </LandscapeContainer>
+        <HomeAssets ContainerElement={LandscapeContainer} />
     )
 
     const getPortraitContainer = () => (
-        <PortraitContainer>
-            <HomeAssets dividerOrientation="horizontal" />
-        </PortraitContainer>
+        <HomeAssets ContainerElement={PortraitContainer} />
     )
 
     return (
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Box>
             {matches ? getLandscapeContainer() : getPortraitContainer()}
-            <BasicTabs />
+            <Tabs />
         </Box>
     )
 };

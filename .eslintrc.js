@@ -23,6 +23,7 @@ module.exports = {
     globals: {
         process: "readonly",
         google: "readonly",
+        JSX: true
     },
 
 
