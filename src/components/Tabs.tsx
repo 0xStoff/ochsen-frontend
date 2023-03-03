@@ -56,7 +56,7 @@ export default function Tabs() {
         <TabsUnstyled value={activeTab}>
             <StickyTabsList>{stickyTabs}</StickyTabsList>
             <StickyTabsListIcons><ThemeButton key="theme" /></StickyTabsListIcons>
-            <Container sx={{ marginY: 5 }}>{tabPanels}</Container>
+            <Container>{tabPanels}</Container>
         </TabsUnstyled>
     );
 }
