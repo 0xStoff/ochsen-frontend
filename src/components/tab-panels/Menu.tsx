@@ -18,20 +18,26 @@ function AddAndRemove({ dish }: { dish: Dish }) {
             setCartItems(updatedCartItems);
         }
     };
-    // const removeFromCart = () => {
-    //     setCartItems(prevCartItems =>
-    //         prevCartItems.filter(item => item.dish.id !== id)
-    //     );
-    // };
+
+    const removeFromCart = () => {
+        const index = cartItems.findIndex(item => item.dish.id === dish.id);
+        if (cartItems[index].quantity <= 0) {
+            return
+        } else {
+            const updatedCartItems = [...cartItems];
+            updatedCartItems[index].quantity--;
+            setCartItems(updatedCartItems);
+        }
+    };
 
     return (
         <Box sx={{ display: "flex", flexDirection: "column" }}>
             <IconButton onClick={addToCart}>
                 <Add />
             </IconButton>
-            {/*<IconButton onClick={removeFromCart}>*/}
-            {/*    <Remove />*/}
-            {/*</IconButton>*/}
+            <IconButton onClick={removeFromCart}>
+                <Remove />
+            </IconButton>
         </Box>
     )
 
@@ -42,23 +48,26 @@ export default function Menu() {
 
     const gridStyles = { display: "flex", alignSelf: "center", justifyContent: "flex-end" }
 
+    const findItemQuantity = (dish: Dish) => cartItems.find(item => item.dish.id === dish.id)?.quantity || 0
     return (
         <>
             {MENU.map((dish: Dish, index) => (
                 <Box key={index}>
-                    <Grid container sx={{ padding: 3 }}>
-                        <Grid item xs={10}>
+                    <Grid container>
+                        <Grid item xs={11}>
                             <Typography variant="h2">{dish.course}</Typography>
                             <Typography variant="h5">{dish.side}</Typography>
                         </Grid>
                         <Grid item sx={{ ...gridStyles }} xs={1}>
                             <Typography variant="h2">{dish.price.toFixed(2)}</Typography>
                         </Grid>
-                        <Grid item sx={{ ...gridStyles }} xs={1}>
-                            <AddAndRemove dish={dish} />
-                            <Chip label={cartItems.find(item => item.dish.id === dish.id)?.quantity || 0}
-                                  sx={{ alignSelf: "center" }} />
-                        </Grid>
+                         {/*TODO: add and remove to/from cart*/}
+                        {/*<Grid item sx={{ ...gridStyles }} xs={1}>*/}
+                        {/*    <AddAndRemove dish={dish} />*/}
+                        {/*    <Chip label={findItemQuantity(dish)}*/}
+                        {/*          sx={{ alignSelf: "center" }}*/}
+                        {/*          variant={findItemQuantity(dish) ? 'filled' : 'outlined'} />*/}
+                        {/*</Grid>*/}
                     </Grid>
                     <Divider />
                 </Box>

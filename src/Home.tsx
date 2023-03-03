@@ -13,7 +13,7 @@ export const Home = () => {
 
 
     const getLandscapeContainer = () => (
-        <Container sx={{ display: "flex", height: "90vh" }}>
+        <Container sx={{ display: "flex", height: "100vh" }}>
             <img alt={OCHSENLOGO.alt} src={OCHSENLOGO.svg[theme]} width={OCHSENLOGO.imgWidth} />
             <Divider flexItem orientation="vertical" sx={{ background: "#fff", margin: 5 }} />
             <Box sx={{ alignSelf: "center" }}>

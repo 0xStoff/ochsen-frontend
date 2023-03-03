@@ -1,7 +1,7 @@
-import { experimental_extendTheme as extendTheme } from "@mui/material";
+import { experimental_extendTheme as extendTheme, responsiveFontSizes } from "@mui/material";
 
 
-const THEME = extendTheme({
+let THEME = extendTheme({
     spacing: 5,
     typography: {
         fontFamily: "Helvetica Neue",
@@ -32,20 +32,23 @@ const THEME = extendTheme({
     // },
 })
 
-// THEME = extendTheme({
-//     typography: {
-//         // h1: {
-//         //     [THEME.breakpoints.up("xs")]: {
-//         //         fontSize: "3.5rem",
-//         //     },
-//         //     [THEME.breakpoints.up("md")]: {
-//         //         fontSize: "5rem",
-//         //     },
-//         //     [THEME.breakpoints.up("lg")]: {
-//         //         fontSize: "7rem",
-//         //     },
-//         // },
-//     },
-// })
+THEME = extendTheme({
+    typography: {
+        h1: {
+            [THEME.breakpoints.up("xs")]: {
+                fontSize: "3.5rem",
+            },
+            [THEME.breakpoints.up("md")]: {
+                fontSize: "5rem",
+            },
+            [THEME.breakpoints.up("lg")]: {
+                fontSize: "7rem",
+            },
+        },
+    },
+})
+
+THEME = responsiveFontSizes(THEME) as typeof THEME;
+
 
 export { THEME }

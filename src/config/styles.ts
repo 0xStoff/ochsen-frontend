@@ -43,6 +43,7 @@ export const Tab = styled(TabUnstyled)`
 export const TabPanel = styled(TabPanelUnstyled)(({ theme }) => `
       border: 1px solid ${theme.palette.text.primary};
       border-radius: 12px;
+      padding: 15px;
       opacity: 0.6;
   `,);
 

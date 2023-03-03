@@ -1,11 +1,11 @@
 import { DivWithOffsetTop, NavigationPanels, TabRefs } from "../interfaces/Tabs";
 import { StickyTabsList, StickyTabsListIcons, Tab, TabPanel } from "../config/styles";
 import { useEffect, useRef, useState } from "react";
+import { Container } from "@mui/material";
+import Icons from "./Icons";
 import { NAVIGATION } from "../config/text";
 import { NAVIGATION_PANELS } from "../config/components";
 import TabsUnstyled from '@mui/base/TabsUnstyled';
-import Icons from "./Icons";
-import { Container } from "@mui/material";
 
 
 export default function BasicTabs() {
