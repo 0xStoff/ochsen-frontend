@@ -1,11 +1,12 @@
+import * as React from "react";
 import { DivWithOffsetTop, NavigationPanels, TabRefs } from "../interfaces/Tabs";
-import { StickyTabsList, StickyTabsListIcons, Tab, TabPanel } from "../config/styles";
+import { StickyTabsList, StickyTabsListIcons, Tab, TabPanel } from "../styles/Tabs";
 import { useEffect, useRef, useState } from "react";
 import { Container } from "@mui/material";
-import Icons from "./Icons";
 import { NAVIGATION } from "../config/text";
 import { NAVIGATION_PANELS } from "../config/components";
 import TabsUnstyled from '@mui/base/TabsUnstyled';
+import { ThemeButton } from "./ThemeButton";
 
 
 export default function BasicTabs() {
@@ -53,8 +54,8 @@ export default function BasicTabs() {
     return (
         <TabsUnstyled value={activeTab}>
             <StickyTabsList>{stickyTabs}</StickyTabsList>
-            <StickyTabsListIcons><Icons /></StickyTabsListIcons>
-            <Container sx={{ marginY:5 }}>{tabPanels}</Container>
+            <StickyTabsListIcons><ThemeButton key="theme" /></StickyTabsListIcons>
+            <Container sx={{ marginY: 5 }}>{tabPanels}</Container>
         </TabsUnstyled>
     );
 }

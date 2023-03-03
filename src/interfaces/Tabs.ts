@@ -1,7 +1,10 @@
-import { NAVIGATION_PANELS } from "../config/components";
+import { ReactElement } from "react";
 
-// export type Navigation = typeof NAVIGATION;
-export type NavigationPanels = typeof NAVIGATION_PANELS;
+export type NavigationPanels = {
+    menu: ReactElement;
+    openingHours: ReactElement;
+    contact: ReactElement;
+};
 export type DivWithOffsetTop = HTMLDivElement & { offsetTop?: number }
 
 export type TabRefs = {

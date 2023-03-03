@@ -1,20 +1,16 @@
-import IconButton from "@mui/material/IconButton";
-import { ShoppingBag } from "@mui/icons-material";
-import { ThemeButton } from "./ThemeButton";
-import Typography from "@mui/material/Typography";
-import { useCart } from "../context/Cart";
 import * as React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { useCart } from "../context/Cart";
 
 
-export default function Icons() {
+export default function CartIcon() {
     const { cartItems } = useCart()
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
+    // const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    //     setAnchorEl(event.currentTarget);
+    // };
     const handleClose = () => {
         setAnchorEl(null);
     };
@@ -41,7 +37,6 @@ export default function Icons() {
                               onClick={handleClose}>{item.dish.course} x {item.quantity}</MenuItem>
                 ))}
             </Menu>
-            <ThemeButton key="theme" />
         </>
     );
 }

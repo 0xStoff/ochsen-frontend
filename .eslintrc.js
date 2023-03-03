@@ -22,7 +22,7 @@ module.exports = {
     },
     globals: {
         process: "readonly",
-        google: "readonly"
+        google: "readonly",
     },
 
 

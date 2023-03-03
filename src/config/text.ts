@@ -34,7 +34,6 @@ export const CONTACT_INFORMATION = {
     postal: "8222 Beringen",
     phone: "052 685 11 45",
 }
-
 export const MENU = [
     {
         id: 0,
