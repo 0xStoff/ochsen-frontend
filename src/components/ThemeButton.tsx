@@ -1,6 +1,6 @@
 import { IconButton, useColorScheme } from "@mui/material";
 import { THEMEICONS } from "../config/components";
-import type { Themes } from "../interfaces/Themes";
+import type { Themes } from "../interfaces/themes";
 
 export const ThemeButton = () => {
     const { mode, setMode } = useColorScheme();

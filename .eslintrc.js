@@ -26,8 +26,6 @@ module.exports = {
         JSX: true,
         React: true,
     },
-    ignorePatterns: ["src/archive"],
-
     overrides: [
         {
             files: ['*.ts', '*.tsx'],
@@ -78,13 +76,13 @@ module.exports = {
                 "import/export": "off",
                 "import/no-named-as-default": "off",
                 "import/no-named-as-default-member": "off",
-                "@typescript-eslint/no-unused-vars": [
-                    "error",
-                    {
-                        "varsIgnorePattern": "^React$",
-                        "argsIgnorePattern": "^_"
-                    }
-                ],
+                // "@typescript-eslint/no-unused-vars": [
+                //     "error",
+                //     {
+                //         "varsIgnorePattern": "^React$",
+                //         "argsIgnorePattern": "^_"
+                //     }
+                // ],
                 // "@typescript-eslint/no-unused-vars-experimental": [
                 //     "error",
                 //     {

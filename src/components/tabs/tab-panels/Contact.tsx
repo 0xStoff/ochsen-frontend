@@ -7,8 +7,8 @@ const Contact = () => (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <Box sx={{ display: "flex", alignItems: "center", marginBottom: 3 }}>
             <Box sx={{ margin: 5 }}>
-                {Object.entries(CONTACT_INFORMATION).map(([key, value]) =>
-                    <Typography key={key} variant="h4">{value}</Typography>
+                {Object.entries(CONTACT_INFORMATION.data).map(([key, value]) =>
+                    <Typography key={key} variant={CONTACT_INFORMATION.variant}>{value}</Typography>
                 )}
             </Box>
             <img

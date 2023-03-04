@@ -4,6 +4,7 @@
     "src/*",
     "src/**/*"
   ],
+  "exclude": ["src/archive"],
   "compilerOptions": {
     "baseUrl": ".",
 

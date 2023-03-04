@@ -1,8 +1,6 @@
 import type * as React from "react";
 import { StickyTabsListStyle, TabStyle } from "../../styles/Tabs";
-import type { TabPanelsType, TabTitleProps } from "../../interfaces/Tabs";
-import { IconButton } from "@mui/material";
-import { PriorityHigh } from "@mui/icons-material";
+import type { TabPanelsType, TabTitleProps } from "../../interfaces/tabs";
 import { TAB_TITLES } from "../../config/text";
 import { ThemeButton } from "../ThemeButton";
 
@@ -20,9 +18,6 @@ const TabTitles: React.FC<TabTitleProps> = ({ setActiveTab }) => (
             </TabStyle>
         ))}
         <ThemeButton key="theme" />
-        <IconButton aria-label="Event Button" sx={{ color: "#fff" }}>
-            <PriorityHigh />
-        </IconButton>
     </StickyTabsListStyle>
 )
 
