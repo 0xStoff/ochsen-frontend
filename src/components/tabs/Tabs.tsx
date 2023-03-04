@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { TabPanelsType, TabRefs } from "../../interfaces/tabs";
 import { useEffect, useRef, useState } from "react";
-import { useMenuData, useOpeningHours } from "../../hooks/fetch";
+import { useContact, useMenuData, useOpeningHours } from "../../hooks/fetch";
 import TabPanels from "./TabPanels";
 import TabTitles from "./TabTitles";
 import TabsUnstyled from '@mui/base/TabsUnstyled';
@@ -17,6 +17,7 @@ export default function Tabs() {
 
     const menu = useMenuData()
     const openingHours = useOpeningHours()
+    const contact = useContact()
 
     useEffect(() => {
         const ref = activeTab && tabRefs.current[activeTab];
@@ -28,7 +29,7 @@ export default function Tabs() {
     return (
         <TabsUnstyled value={activeTab}>
             <TabTitles setActiveTab={setActiveTab} />
-            <TabPanels menu={menu} openingHours={openingHours} tabRefs={tabRefs} />
+            <TabPanels contact={contact} menu={menu} openingHours={openingHours} tabRefs={tabRefs} />
         </TabsUnstyled>
     );
 

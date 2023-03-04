@@ -1,13 +1,14 @@
-import * as React from "react";
+import type * as React from "react";
 import { Box, Typography } from "@mui/material";
 import { CONTACT_INFORMATION } from "../../../config/text";
 import { OCHSENIMAGE } from "../../../config/assets";
+import type { ContactInterface } from "../../../interfaces/contact";
 
-const Contact = () => (
+const Contact: React.FC<{ contact: ContactInterface }> = ({ contact }) => (
     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <Box sx={{ display: "flex", alignItems: "center", marginBottom: 3 }}>
             <Box sx={{ margin: 5 }}>
-                {Object.entries(CONTACT_INFORMATION.data).map(([key, value]) =>
+                {Object.entries(contact).map(([key, value]) =>
                     <Typography key={key} variant={CONTACT_INFORMATION.variant}>{value}</Typography>
                 )}
             </Box>

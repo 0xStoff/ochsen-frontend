@@ -1,9 +1,38 @@
-import type { Category, PopulatedMenuResponse, ResponseArray } from "../interfaces/menu";
+import type { Category, PopulatedMenuResponse, ResponseArray, ResponseObject } from "../interfaces/menu";
+import type { HomepageInterface } from "../interfaces/event";
 import type { OpeningHoursInterface } from "../interfaces/opening-hours-interface";
+import type { ContactInterface } from "../interfaces/contact";
+
+
+export async function fetchContact() {
+    const responseContact = await fetch(`${process.env.REACT_APP_BASE_URL}/api/contact`);
+    const contactJson: ResponseObject<ContactInterface> = await responseContact.json();
+    const { title, postal, street, phone, name } = contactJson.data.attributes;
+    return {
+        title,
+        name,
+        street,
+        postal,
+        phone,
+    }
+}
+
+
+export async function fetchHomepage() {
+    const responseEvent = await fetch(`${process.env.REACT_APP_BASE_URL}/api/homepage`);
+    const eventJson: ResponseObject<HomepageInterface> = await responseEvent.json();
+    const { title, claim, event } = eventJson.data.attributes;
+    return {
+        id: eventJson.id,
+        event,
+        title,
+        claim
+    }
+}
 
 
 export async function fetchOpeningHours() {
-    const responseOpeningHours = await fetch("http://localhost:1337/api/opening-hours");
+    const responseOpeningHours = await fetch(`${process.env.REACT_APP_BASE_URL}/api/opening-hours`);
     const openingHoursJson: ResponseArray<OpeningHoursInterface> = await responseOpeningHours.json();
 
     return openingHoursJson.data.map(({ id, attributes: { title, subtitle1, subtitle2 } }) => ({
@@ -16,7 +45,7 @@ export async function fetchOpeningHours() {
 
 
 export async function fetchCategories() {
-    const responseCategories = await fetch("http://localhost:1337/api/categories");
+    const responseCategories = await fetch(`${process.env.REACT_APP_BASE_URL}/api/categories`);
     const categoriesJson: ResponseArray<Category> = await responseCategories.json();
 
     // Create a map of category IDs to their corresponding categories
@@ -30,7 +59,7 @@ export async function fetchCategories() {
 }
 
 export async function fetchMenu() {
-    const responseMenus = await fetch("http://localhost:1337/api/menus?populate=*");
+    const responseMenus = await fetch(`${process.env.REACT_APP_BASE_URL}/api/menus?populate=*`);
     const menuJson: ResponseArray<PopulatedMenuResponse> = await responseMenus.json();
 
 
