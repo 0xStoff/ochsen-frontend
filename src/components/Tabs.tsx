@@ -16,10 +16,7 @@ export default function Tabs() {
         contact: null,
     });
 
-    const [activeTab, setActiveTab] = useState<keyof NavigationPanels >(
-        // Object.keys(NAVIGATION_PANELS)[0] as keyof NavigationPanels
-        // null
-    );
+    const [activeTab, setActiveTab] = useState<keyof NavigationPanels>();
 
     useEffect(() => {
         const ref = activeTab && tabRefs.current[activeTab];
@@ -60,3 +57,4 @@ export default function Tabs() {
         </TabsUnstyled>
     );
 }
+

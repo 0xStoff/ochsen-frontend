@@ -66,6 +66,7 @@ export const StickyTabsList = styled(TabsList)(`
     z-index: 1; 
     `);
 
+
 export const StickyTabsListIcons = styled(TabsList)(`
     position: fixed;
     top: 0;

@@ -1,8 +1,8 @@
+import { CartProvider } from "./context/Cart";
 import { CssBaseline, } from "@mui/material";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
 import { Home } from "./Home";
 import { THEME } from "./config/theme";
-import { CartProvider } from "./context/Cart";
 
 export default function App() {
     return (
