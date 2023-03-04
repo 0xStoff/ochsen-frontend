@@ -1,6 +1,15 @@
-export const HOMEPAGE_TITLE = "Restaurant Ochsen Beringen"
-export const HOMEPAGE_CLAIM = "Das fein bürgerliche Restaurant in Ihrer Umgebung"
-export const NAVIGATION = {
+import type { TypographyInterface } from "../interfaces/Event";
+
+export const HOMEPAGE_TITLE: TypographyInterface = { variant: "h1", text: "Restaurant Ochsen Beringen" }
+export const HOMEPAGE_CLAIM: TypographyInterface = { variant: "h5",text: "Das fein bürgerliche Restaurant in Ihrer Umgebung" }
+export const EVENT: TypographyInterface = {
+    text: "Besuchen Sie uns am Metzgete vom 15.03 bis 20.03.2023",
+    variant: "h5",
+    styles: {
+        color: "red",
+    }
+}
+export const TAB_TITLES = {
     menu: "Speisekarte",
     openingHours: "Öffnungszeiten",
     contact: "Kontakt",

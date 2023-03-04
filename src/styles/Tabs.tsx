@@ -6,11 +6,10 @@ import { buttonUnstyledClasses } from "@mui/base/ButtonUnstyled";
 import { styled } from "@mui/system";
 
 
-export const Tab = styled(TabUnstyled)`
+export const TabStyle = styled(TabUnstyled)`
       font-family: Helvetica Neue;
       color: #fff;
       cursor: pointer;
-      font-size: 0.875rem;
       font-weight: 600;
       background-color: transparent;
       width: 100%;
@@ -40,14 +39,14 @@ export const Tab = styled(TabUnstyled)`
         cursor: not-allowed;
       }`;
 
-export const TabPanel = styled(TabPanelUnstyled)(({ theme }) => `
+export const TabPanelStyle = styled(TabPanelUnstyled)(({ theme }) => `
       border: 1px solid ${theme.palette.mode === 'dark' ? ' rgba(255, 255, 255, 0.6)' : ' rgba(0, 0, 0, 0.6)'};
       border-radius: 12px;
       padding: 15px;
       color:  ${theme.palette.mode === 'dark' ? ' rgba(255, 255, 255, 0.6)' : ' rgba(0, 0, 0, 0.6)'};
   `,);
 
-const TabsList = styled(TabsListUnstyled)(({ theme }) => `
+const TabsListStyle = styled(TabsListUnstyled)(({ theme }) => `
       background-color: ${blue[500]};
       border-radius: 12px;
       margin-bottom: 16px;
@@ -58,19 +57,9 @@ const TabsList = styled(TabsListUnstyled)(({ theme }) => `
       box-shadow: 0px 4px 30px ${theme.palette.mode === 'dark' ? grey[900] : grey[200]};
       `,);
 
-
-export const StickyTabsList = styled(TabsList)(`
-    position: fixed;
-    top: 0;
-    margin: 5px;
-    z-index: 1; 
-    `);
+export const StickyTabsListStyle = styled(TabsListStyle)`
+  position: fixed;
+  top: 0;
+`;
 
 
-export const StickyTabsListIcons = styled(TabsList)(`
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin: 5px;
-    z-index: 1; 
-    `);

@@ -23,9 +23,10 @@ module.exports = {
     globals: {
         process: "readonly",
         google: "readonly",
-        JSX: true
+        JSX: true,
+        React: true,
     },
-
+    ignorePatterns: ["src/archive"],
 
     overrides: [
         {
@@ -42,7 +43,7 @@ module.exports = {
                 ecmaVersion: 'latest',
                 sourceType: 'module',
                 jsx: true,
-                project: ['./tsconfig.json'], // Specify it only for TypeScript files
+                project: ['./tsconfig.json'],
             },
             rules: {
                 'react/jsx-uses-react': 'error',
@@ -52,8 +53,6 @@ module.exports = {
                 'sort-imports': 'warn',
                 'object-curly-spacing': ['error', 'always'],
                 'prefer-template': 'error',
-
-
                 'require-await': ['error'],
                 'no-return-await': ['error'],
                 'no-await-in-loop': ['error'],
@@ -70,8 +69,31 @@ module.exports = {
                 'no-shadow': 'off',
                 '@typescript-eslint/no-shadow': ['error'],
 
-                'no-unused-vars': 'off',
-                '@typescript-eslint/no-unused-vars': ['warn'],
+                // 'no-unused-vars': 'off',
+                // '@typescript-eslint/no-unused-vars': ['warn'],
+
+                "import/named": "off",
+                "import/namespace": "off",
+                "import/default": "off",
+                "import/export": "off",
+                "import/no-named-as-default": "off",
+                "import/no-named-as-default-member": "off",
+                "@typescript-eslint/no-unused-vars": [
+                    "error",
+                    {
+                        "varsIgnorePattern": "^React$",
+                        "argsIgnorePattern": "^_"
+                    }
+                ],
+                // "@typescript-eslint/no-unused-vars-experimental": [
+                //     "error",
+                //     {
+                //         "ignoreArgsIfArgsAfterAreUsed": true,
+                //         "ignoredNamesRegex": "^_"
+                //     }
+                // ],
+                "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }],
+
 
                 'no-spaced-func': 'off',
                 'func-call-spacing': 'off',
@@ -79,19 +101,19 @@ module.exports = {
 
 
                 "react/jsx-boolean-value": ["error", "never"],
-                "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }],
-                "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx"] }],
+                "react/jsx-curly-brace-presence": ["error", {"props": "never", "children": "never"}],
+                "react/jsx-filename-extension": ["error", {"extensions": [".tsx", ".jsx"]}],
                 "react/jsx-fragments": ["error", "syntax"],
                 "react/jsx-key": "error",
-                "react/jsx-max-depth": ["error", { "max": 4 }],
-                "react/jsx-no-bind": ["error", { "allowArrowFunctions": true }],
+                "react/jsx-max-depth": ["error", {"max": 4}],
+                "react/jsx-no-bind": ["error", {"allowArrowFunctions": true}],
                 "react/jsx-no-constructed-context-values": "error",
-                "react/jsx-no-duplicate-props": ["error", { "ignoreCase": true }],
+                "react/jsx-no-duplicate-props": ["error", {"ignoreCase": true}],
                 "react/jsx-no-script-url": "error",
                 "react/jsx-no-useless-fragment": "error",
                 "react/jsx-pascal-case": "error",
-                "react/jsx-props-no-spreading": ["error", { "exceptions": ["Component", "ComponentChild"] }],
-                "react/jsx-sort-props": ["error", { "shorthandFirst": true }],
+                "react/jsx-props-no-spreading": ["error", {"exceptions": ["Component", "ComponentChild"]}],
+                "react/jsx-sort-props": ["error", {"shorthandFirst": true}],
                 "react/jsx-tag-spacing": ["error", {
                     "closingSlash": "never",
                     "beforeSelfClosing": "always",
@@ -107,13 +129,13 @@ module.exports = {
                     "logical": "ignore",
                     "prop": "ignore"
                 }],
-                "react/prop-types": "off", // if you're using TypeScript, you can turn off the prop-types rule
+                "react/prop-types": "off",
                 "react-hooks/rules-of-hooks": "error",
                 "react-hooks/exhaustive-deps": "warn",
 
 
-                'no-console': process.env.NODE_ENV === 'production' ? ['error', { allow: ['warn', 'error'] }] : 'off',
-                'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+                // 'no-console': process.env.NODE_ENV === 'production' ? ['error', { allow: ['warn', 'error'] }] : 'off',
+                // 'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
                 'max-len': ['error', {
                     code: 120,
                     tabWidth: 2,
@@ -127,7 +149,7 @@ module.exports = {
 
                 'array-element-newline': ['error', {
                     ArrayExpression: 'consistent',
-                    ArrayPattern: { minItems: 3 },
+                    ArrayPattern: {minItems: 3},
                 }],
 
                 'array-bracket-newline': ['error', 'consistent'],
@@ -137,8 +159,8 @@ module.exports = {
                     consistent: true,
                 }],
 
-                'no-param-reassign': ['error', { props: false }],
-                'newline-per-chained-call': ['error', { ignoreChainWithDepth: 5 }],
+                'no-param-reassign': ['error', {props: false}],
+                'newline-per-chained-call': ['error', {ignoreChainWithDepth: 5}],
 
             },
         },

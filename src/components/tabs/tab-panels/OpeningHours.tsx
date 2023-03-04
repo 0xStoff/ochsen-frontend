@@ -1,5 +1,5 @@
 import { Box, Divider, Typography } from "@mui/material";
-import { OPENING_HOURS } from "../../config/text";
+import { OPENING_HOURS } from "../../../config/text";
 
 const OpeningHours = () => (
     <>

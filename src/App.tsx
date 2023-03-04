@@ -1,4 +1,4 @@
-import { CartProvider } from "./context/Cart";
+import { CartProvider } from "./archive/context/Cart";
 import { CssBaseline, } from "@mui/material";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
 import { Home } from "./Home";
