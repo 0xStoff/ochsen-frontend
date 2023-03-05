@@ -1,11 +1,17 @@
-import { Box, Chip, Divider, Grid, Typography } from "@mui/material";
+import { Box, Chip, Divider, Grid, IconButton, Tooltip, Typography } from "@mui/material";
 import type { Dish } from "../../../interfaces/menu";
 import { MENU } from "../../../config/text";
 import type React from "react";
+import { InfoOutlined } from "@mui/icons-material";
 
 
 const Menu: React.FC<{ menu: Array<Dish> }> = ({ menu }) => (
-    <>
+    <Box>
+        <Tooltip placement="right" title="Speisekarte als PDF herunterladen">
+            <IconButton href={`${process.env.REACT_APP_OCHSEN_MENU_URL}`} target="_blank">
+                <InfoOutlined />
+            </IconButton>
+        </Tooltip>
         {menu.map((dish: Dish, index) => (
             <Box key={index}>
                 <Grid container spacing={2}>
@@ -20,7 +26,7 @@ const Menu: React.FC<{ menu: Array<Dish> }> = ({ menu }) => (
                 <Divider />
             </Box>
         ))}
-    </>
+    </Box>
 )
 
 
