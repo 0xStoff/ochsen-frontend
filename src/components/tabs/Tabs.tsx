@@ -19,6 +19,7 @@ export default function Tabs() {
     const openingHours = useOpeningHours()
     const contact = useContact()
 
+
     useEffect(() => {
         const ref = activeTab && tabRefs.current[activeTab];
         if (ref) {

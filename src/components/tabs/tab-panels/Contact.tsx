@@ -1,24 +1,26 @@
 import type * as React from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { CONTACT_INFORMATION } from "../../../config/text";
-import type { ContactInterface } from "../../../interfaces/contact";
-import { OCHSENIMAGE } from "../../../config/assets";
+import type { PopulatedContactInterface } from "../../../interfaces/contact";
 import { THEME } from "../../../config/theme";
 
-const Contact: React.FC<{ contact: ContactInterface }> = ({ contact }) => {
+const Contact: React.FC<{ contact: PopulatedContactInterface }> = ({ contact }) => {
     const isMd = useMediaQuery(THEME.breakpoints.up('md'));
     const isSm = useMediaQuery(THEME.breakpoints.up('sm'));
+
+    const { picture, ...contactData } = contact;
+
     return (
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <Box sx={{ display: "flex", alignItems: "center", marginBottom: 3, flexDirection: isMd ? 'row' : 'column' }}>
                 <Box sx={{ margin: 5 }}>
-                    {Object.entries(contact).map(([key, value]) =>
+                    {Object.entries(contactData).map(([key, value]) =>
                         <Typography key={key} variant={CONTACT_INFORMATION.variant}>{value}</Typography>
                     )}
                 </Box>
                 <img
-                    alt={OCHSENIMAGE.alt}
-                    src={OCHSENIMAGE.jpg}
+                    alt={picture?.data.attributes.alternativeText}
+                    src={`${process.env.REACT_APP_BASE_URL}${contact.picture?.data.attributes.url}`}
                     style={{ borderRadius: 10 }}
                     width={isSm ? 500 : 350}
                 />

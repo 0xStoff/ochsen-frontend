@@ -1,9 +1,9 @@
 import { fetchContact, fetchHomepage, fetchMenu, fetchOpeningHours } from "../services/http";
 import { useEffect, useState } from "react";
-import type { ContactInterface } from "../interfaces/contact";
 import type { Dish } from "../interfaces/menu";
 import type { HomepageInterface } from "../interfaces/event";
 import type { OpeningHoursInterface } from "../interfaces/opening-hours-interface";
+import type { PopulatedContactInterface } from "../interfaces/contact";
 
 export const useData = <T>(initialState: T, fetchData: () => Promise<T>) => {
     const [data, setData] = useState<T>(initialState);
@@ -36,12 +36,13 @@ export const useHomepage = () => {
 };
 
 export const useContact = () => {
-    return useData<ContactInterface>({
+    return useData<PopulatedContactInterface>({
         title: '',
         name: '',
         street: '',
         postal: '',
         phone: '',
+        picture: null
     }, fetchContact)
 };
 

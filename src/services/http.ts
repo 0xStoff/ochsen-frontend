@@ -1,19 +1,21 @@
 import type { Category, Dish, PopulatedMenuResponse, ResponseArray, ResponseObject } from "../interfaces/menu";
 import type { HomepageInterface } from "../interfaces/event";
 import type { OpeningHoursInterface } from "../interfaces/opening-hours-interface";
-import type { ContactInterface } from "../interfaces/contact";
+import type { PopulatedContactInterface } from "../interfaces/contact";
 
 
-export async function fetchContact(): Promise<ContactInterface> {
-    const responseContact = await fetch(`${process.env.REACT_APP_BASE_URL}/api/contact`);
-    const contactJson: ResponseObject<ContactInterface> = await responseContact.json();
-    const { title, postal, street, phone, name } = contactJson.data.attributes;
+export async function fetchContact(): Promise<PopulatedContactInterface> {
+    const responseContact = await fetch(`${process.env.REACT_APP_BASE_URL}/api/contact?populate=*`);
+    const contactJson: ResponseObject<PopulatedContactInterface> = await responseContact.json();
+    const { title, postal, street, phone, name, picture } = contactJson.data.attributes;
+
     return {
         title,
         name,
         street,
         postal,
         phone,
+        picture
     }
 }
 
@@ -44,7 +46,7 @@ export async function fetchOpeningHours(): Promise<Array<OpeningHoursInterface &
 }
 
 
-export async function fetchCategories(){
+export async function fetchCategories() {
     const responseCategories = await fetch(`${process.env.REACT_APP_BASE_URL}/api/categories`);
     const categoriesJson: ResponseArray<Category> = await responseCategories.json();
 
