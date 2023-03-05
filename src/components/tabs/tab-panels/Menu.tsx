@@ -1,8 +1,8 @@
 import { Box, Chip, Divider, Grid, IconButton, Tooltip, Typography } from "@mui/material";
 import type { Dish } from "../../../interfaces/menu";
+import { InfoOutlined } from "@mui/icons-material";
 import { MENU } from "../../../config/text";
 import type React from "react";
-import { InfoOutlined } from "@mui/icons-material";
 
 
 const Menu: React.FC<{ menu: Array<Dish> }> = ({ menu }) => (

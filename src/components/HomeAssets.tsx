@@ -4,7 +4,7 @@ import { EVENT, HOMEPAGE_CLAIM, HOMEPAGE_TITLE } from "../config/text";
 import type { HomeAssetsProps } from "../interfaces/home";
 import { OCHSENLOGO } from "../config/assets";
 import type { Themes } from "../interfaces/themes";
-import { useHomepage } from "../hooks/fetch";
+import { useHomepage } from "../hooks/useData";
 
 export const HomeAssets: React.FC<HomeAssetsProps>
     = ({ ContainerElement }) => {

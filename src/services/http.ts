@@ -1,10 +1,10 @@
-import type { Category, PopulatedMenuResponse, ResponseArray, ResponseObject } from "../interfaces/menu";
+import type { Category, Dish, PopulatedMenuResponse, ResponseArray, ResponseObject } from "../interfaces/menu";
 import type { HomepageInterface } from "../interfaces/event";
 import type { OpeningHoursInterface } from "../interfaces/opening-hours-interface";
 import type { ContactInterface } from "../interfaces/contact";
 
 
-export async function fetchContact() {
+export async function fetchContact(): Promise<ContactInterface> {
     const responseContact = await fetch(`${process.env.REACT_APP_BASE_URL}/api/contact`);
     const contactJson: ResponseObject<ContactInterface> = await responseContact.json();
     const { title, postal, street, phone, name } = contactJson.data.attributes;
@@ -18,7 +18,7 @@ export async function fetchContact() {
 }
 
 
-export async function fetchHomepage() {
+export async function fetchHomepage(): Promise<HomepageInterface & { id: number }> {
     const responseEvent = await fetch(`${process.env.REACT_APP_BASE_URL}/api/homepage`);
     const eventJson: ResponseObject<HomepageInterface> = await responseEvent.json();
     const { title, claim, event } = eventJson.data.attributes;
@@ -31,7 +31,7 @@ export async function fetchHomepage() {
 }
 
 
-export async function fetchOpeningHours() {
+export async function fetchOpeningHours(): Promise<Array<OpeningHoursInterface & { id: number }>> {
     const responseOpeningHours = await fetch(`${process.env.REACT_APP_BASE_URL}/api/opening-hours`);
     const openingHoursJson: ResponseArray<OpeningHoursInterface> = await responseOpeningHours.json();
 
@@ -44,7 +44,7 @@ export async function fetchOpeningHours() {
 }
 
 
-export async function fetchCategories() {
+export async function fetchCategories(){
     const responseCategories = await fetch(`${process.env.REACT_APP_BASE_URL}/api/categories`);
     const categoriesJson: ResponseArray<Category> = await responseCategories.json();
 
@@ -58,7 +58,7 @@ export async function fetchCategories() {
     );
 }
 
-export async function fetchMenu() {
+export async function fetchMenu(): Promise<Array<Dish & Category>> {
     const responseMenus = await fetch(`${process.env.REACT_APP_BASE_URL}/api/menus?populate=*`);
     const menuJson: ResponseArray<PopulatedMenuResponse> = await responseMenus.json();
 

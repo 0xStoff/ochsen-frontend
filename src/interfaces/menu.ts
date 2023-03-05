@@ -22,7 +22,7 @@ export interface ResponseObject<T> {
     };
 }
 
-export interface PouplatedResponseObject<T> {
+export interface PopulatedResponseObject<T> {
     data: {
         id: number;
         attributes: T;
@@ -30,5 +30,5 @@ export interface PouplatedResponseObject<T> {
 }
 
 export type PopulatedMenuResponse = Dish & {
-    category: PouplatedResponseObject<Category>;
+    category: PopulatedResponseObject<Category>;
 }

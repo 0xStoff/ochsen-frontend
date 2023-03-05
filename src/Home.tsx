@@ -2,26 +2,15 @@ import type * as React from "react";
 import { Box, Container, Typography, useColorScheme, useMediaQuery } from "@mui/material";
 import { EVENT, HOMEPAGE_CLAIM, HOMEPAGE_TITLE } from "./config/text";
 import { OCHSENLOGO } from "./config/assets";
+import { THEME } from "./config/theme";
 import Tabs from "./components/tabs/Tabs";
 import type { Themes } from "./interfaces/themes";
-import { useHomepage } from "./hooks/fetch";
-import { THEME } from "./config/theme";
+import { useHomepage } from "./hooks/useData";
 
 export const Home = () => {
     const { mode } = useColorScheme();
     const homepage = useHomepage()
-
     const isMd = useMediaQuery(THEME.breakpoints.up('md'));
-
-    // const getLandscapeContainer = () => (
-    //     <HomeAssets ContainerElement={LandscapeContainer}/>
-    // );
-    //
-    // const getPortraitContainer = () => (
-    //     <HomeAssets ContainerElement={PortraitContainer} />
-    // )
-    // const isMd = useMediaQuery(THEME.breakpoints.up('md'));
-
 
     return (
         <Box>

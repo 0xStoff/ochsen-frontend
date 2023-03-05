@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { TabPanelsType, TabRefs } from "../../interfaces/tabs";
 import { useEffect, useRef, useState } from "react";
-import { useContact, useMenuData, useOpeningHours } from "../../hooks/fetch";
+import { useContact, useMenuData, useOpeningHours } from "../../hooks/useData";
 import TabPanels from "./TabPanels";
 import TabTitles from "./TabTitles";
 import TabsUnstyled from '@mui/base/TabsUnstyled';
