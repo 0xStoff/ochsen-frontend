@@ -3,6 +3,7 @@ module.exports = {
         browser: true
     },
     settings: {
+        "ignorePatterns": ["src/archive"],
         'import/parsers': {
             '@typescript-eslint/parser': ['.ts', '.tsx'],
         },

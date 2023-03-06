@@ -9,7 +9,7 @@ import { useHomepage } from "./hooks/useData";
 
 export const Home = () => {
     const { mode } = useColorScheme();
-    const homepage = useHomepage()
+    const [homepage, errorHomepage] = useHomepage()
     const isMd = useMediaQuery(THEME.breakpoints.up('md'));
 
     return (

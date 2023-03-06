@@ -5,7 +5,7 @@ export interface Dish {
 }
 
 export interface Category {
-    category: string;
+    category: string | null;
 }
 
 export interface ResponseArray<T> {

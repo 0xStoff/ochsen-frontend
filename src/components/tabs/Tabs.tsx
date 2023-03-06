@@ -1,10 +1,11 @@
 import * as React from "react";
-import type { TabPanelsType, TabRefs } from "../../interfaces/tabs";
 import { useEffect, useRef, useState } from "react";
+import type { TabPanelsType, TabRefs } from "../../interfaces/tabs";
 import { useContact, useMenuData, useOpeningHours } from "../../hooks/useData";
 import TabPanels from "./TabPanels";
 import TabTitles from "./TabTitles";
 import TabsUnstyled from '@mui/base/TabsUnstyled';
+import ErrorSnackbar from "../ErrorSnackbar";
 
 
 export default function Tabs() {
@@ -15,9 +16,9 @@ export default function Tabs() {
     });
     const [activeTab, setActiveTab] = useState<keyof TabPanelsType | ''>('');
 
-    const menu = useMenuData()
-    const openingHours = useOpeningHours()
-    const contact = useContact()
+    const [menu, errorMenu] = useMenuData()
+    const [openingHours, errorOpeningHours] = useOpeningHours()
+    const [contact, errorContact] = useContact()
 
 
     useEffect(() => {
@@ -31,6 +32,7 @@ export default function Tabs() {
         <TabsUnstyled value={activeTab}>
             <TabTitles setActiveTab={setActiveTab} />
             <TabPanels contact={contact} menu={menu} openingHours={openingHours} tabRefs={tabRefs} />
+            <ErrorSnackbar error={errorMenu || errorContact || errorOpeningHours} />
         </TabsUnstyled>
     );
 

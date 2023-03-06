@@ -1,18 +1,8 @@
 {
-  "include": [
-    "src",
-    "src/*",
-    "src/**/*"
-  ],
-  "exclude": ["src/archive"],
   "compilerOptions": {
     "baseUrl": ".",
-
     "paths": {
-//      "@config/*": [
-//        "./src/config/*"
-//      ]
-      //      "@/*": ["./src/*"],
+      "@/*": ["src/*"],
     },
     "target": "es6",
     "lib": [
@@ -36,6 +26,11 @@
     "jsx": "react-jsx",
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "strictNullChecks": true,
-  }
+    "strictNullChecks": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "dist","src/archive"]
 }
+
+
+

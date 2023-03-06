@@ -5,18 +5,19 @@ import type { HomepageInterface } from "../interfaces/event";
 import type { OpeningHoursInterface } from "../interfaces/opening-hours-interface";
 import type { PopulatedContactInterface } from "../interfaces/contact";
 
-export const useData = <T>(initialState: T, fetchData: () => Promise<T>) => {
+export const useData = <T>(initialState: T, fetchData: () => Promise<T>): [T, Error | null] => {
     const [data, setData] = useState<T>(initialState);
+    const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
         const getData = async () => {
-            const fetch = await fetchData();
+            const fetch = await fetchData()
             setData(fetch);
         };
-        getData()
+        getData().catch(setError)
     }, []);
 
-    return data
+    return [data, error]
 };
 
 export const useMenuData = () => {
