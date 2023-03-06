@@ -1,28 +1,32 @@
 import type * as React from "react";
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import { CONTACT_INFORMATION } from "../../../config/text";
 import type { PopulatedContactInterface } from "../../../interfaces/contact";
 import { THEME } from "../../../config/theme";
 
 const Contact: React.FC<{ contact: PopulatedContactInterface }> = ({ contact }) => {
     const isMd = useMediaQuery(THEME.breakpoints.up('md'));
-    const isSm = useMediaQuery(THEME.breakpoints.up('sm'));
 
     const { picture, ...contactData } = contact;
 
     return (
         <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <Box sx={{ display: "flex", alignItems: "center", marginBottom: 3, flexDirection: isMd ? 'row' : 'column' }}>
-                <Box sx={{ margin: 5 }}>
+            <Box sx={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                marginBottom: 3,
+                flexDirection: isMd ? 'row' : 'column'
+            }}>
+                <Container sx={{ padding: 5 }}>
                     {Object.entries(contactData).map(([key, value]) =>
                         <Typography key={key} variant={CONTACT_INFORMATION.variant}>{value}</Typography>
                     )}
-                </Box>
+                </Container>
                 <img
                     alt={picture?.data.attributes.alternativeText}
                     src={`${process.env.REACT_APP_BASE_URL}${contact.picture?.data.attributes.url}`}
-                    style={{ borderRadius: 10 }}
-                    width={isSm ? 500 : 350}
+                    style={{ borderRadius: 10, width: isMd ? "50%" : "100%" }}
                 />
             </Box>
             <iframe

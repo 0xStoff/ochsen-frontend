@@ -63,19 +63,18 @@ export async function fetchCategories() {
 export async function fetchMenu(): Promise<Array<Dish & Category>> {
     const responseMenus = await fetch(`${process.env.REACT_APP_BASE_URL}/api/menus?populate=*`);
     const menuJson: ResponseArray<PopulatedMenuResponse> = await responseMenus.json();
-
-
+    
     // Sort the menu items by category ID
-    const sortedMenu = menuJson.data.sort(
-        (a, b) => a.attributes.category.data.id - b.attributes.category.data.id
-    );
-
+    // crashing when no ID but relation is not required in backend
+    // const sortedMenu = menuJson.data.sort(
+    //     (a, b) => a.attributes.category.data.id - b.attributes.category.data.id
+    // );
     const categoriesById = await fetchCategories()
-    return sortedMenu.map(({ id, attributes: { course, side, price, category } }) => ({
+    return menuJson.data.map(({ id, attributes: { course, side, price, category } }) => ({
         id,
         course,
         side,
         price,
-        category: categoriesById[category.data.id],
+        category: category.data ? categoriesById[category.data.id] : '',
     }));
 }
