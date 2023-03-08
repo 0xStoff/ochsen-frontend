@@ -36,7 +36,8 @@ const Menu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
                     </AccordionSummary>
                     <AccordionDetails>
                         {dishes.map(dish => (
-                                <Grid container key={dish.id} spacing={2}>
+                                <Grid container key={dish.id} spacing={2}
+                                      sx={{ borderBottom: '1px solid rgba(155,155,155,0.2)' }}>
                                     <Grid item xs={10}>
                                         <Typography variant={MENU.variant.course}>{dish.course}</Typography>
                                         <Typography variant={MENU.variant.side}>{dish.side}</Typography>
