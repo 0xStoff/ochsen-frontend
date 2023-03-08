@@ -4,6 +4,7 @@ import {
     AccordionSummary,
     Box,
     Chip,
+    Container,
     Grid,
     IconButton,
     Tooltip,
@@ -57,7 +58,9 @@ const Menu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
                     </AccordionDetails>
                 </Accordion>
             ))}
-
+            <Container sx={{ marginTop: 3 }} >
+                <Typography variant='caption'>* Preis- und Sortimentsänderungen vorbehalten</Typography>
+            </Container>
         </Box>
     )
 }
