@@ -1,5 +1,5 @@
 import type * as React from "react";
-import type { Dish } from "./menu";
+import type { Dish, DishesByCategories } from "./menu";
 import type { OpeningHoursInterface } from "./opening-hours-interface";
 import type { ReactElement } from "react";
 import type { ContactInterface } from "./contact";
@@ -18,7 +18,7 @@ export type TabRefs = {
 
 export interface TabPanelProps {
     tabRefs: React.MutableRefObject<TabRefs>;
-    menu: Array<Dish>;
+    menu: DishesByCategories;
     openingHours: Array<OpeningHoursInterface>;
     contact: ContactInterface;
 }

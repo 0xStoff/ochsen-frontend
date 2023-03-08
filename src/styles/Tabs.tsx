@@ -60,6 +60,7 @@ const TabsListStyle = styled(TabsListUnstyled)(({ theme }) => `
 export const StickyTabsListStyle = styled(TabsListStyle)`
   position: fixed;
   top: 0;
+  z-index: 99;
 `;
 
 

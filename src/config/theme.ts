@@ -7,7 +7,19 @@ let THEME = extendTheme({
         fontFamily: "Helvetica Neue",
     },
     components: {
-
+        MuiAccordion: {
+            defaultProps: {
+                variant: 'outlined',
+            },
+            styleOverrides: {
+                root: {
+                    border: "none",
+                    '&::before': {
+                        display: 'none',
+                    },
+                },
+            },
+        },
         MuiIconButton: {
             styleOverrides: {
                 colorPrimary: '#fff'

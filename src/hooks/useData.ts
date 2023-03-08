@@ -1,7 +1,7 @@
 import { fetchContact, fetchHomepage, fetchMenu, fetchOpeningHours } from "../services/http";
 import { useEffect, useState } from "react";
 import type { ContactInterface } from "@/interfaces/contact";
-import type { Dish } from "@/interfaces/menu";
+import type { DishesByCategories } from "@/interfaces/menu";
 import type { HomepageInterface } from "@/interfaces/event";
 import type { OpeningHoursInterface } from "@/interfaces/opening-hours-interface";
 
@@ -21,7 +21,7 @@ export const useData = <T>(initialState: T, fetchData: () => Promise<T>): [T, Er
 };
 
 export const useMenuData = () => {
-    return useData<Array<Dish>>([], fetchMenu)
+    return useData<DishesByCategories>({}, fetchMenu)
 };
 
 export const useOpeningHours = () => {

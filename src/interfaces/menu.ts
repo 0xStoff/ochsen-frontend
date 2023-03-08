@@ -34,3 +34,5 @@ export interface PopulatedResponseObject<T> {
 export type PopulatedMenuResponse = Dish & {
     category: PopulatedResponseObject<Category>;
 }
+
+export type DishesByCategories = { [key: string]: Array<Dish> }
