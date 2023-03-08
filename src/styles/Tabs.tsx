@@ -7,6 +7,7 @@ import { styled } from "@mui/system";
 
 
 export const TabStyle = styled(TabUnstyled)`
+      font-family: Helvetica Neue;
       color: #fff;
       cursor: pointer;
       font-weight: 600;
@@ -39,7 +40,7 @@ export const TabStyle = styled(TabUnstyled)`
       }`;
 
 export const TabPanelStyle = styled(TabPanelUnstyled)(({ theme }) => `
-       border: 1px solid ${theme.palette.mode === 'dark' ? ' rgba(255, 255, 255, 0.6)' : ' rgba(0, 0, 0, 0.6)'};
+      // border: 1px solid ${theme.palette.mode === 'dark' ? ' rgba(255, 255, 255, 0.6)' : ' rgba(0, 0, 0, 0.6)'};
       border-radius: 12px;
       padding: 15px;
       // color:  ${theme.palette.mode === 'dark' ? ' rgba(255, 255, 255, 0.6)' : ' rgba(0, 0, 0, 0.6)'};
