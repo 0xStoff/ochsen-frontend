@@ -1,10 +1,10 @@
 import type * as React from "react";
 import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import { CONTACT_INFORMATION } from "../../../config/text";
-import type { PopulatedContactInterface } from "../../../interfaces/contact";
+import type { ContactInterface } from "@/interfaces/contact";
 import { THEME } from "../../../config/theme";
 
-const Contact: React.FC<{ contact: PopulatedContactInterface }> = ({ contact }) => {
+const Contact: React.FC<{ contact: ContactInterface }> = ({ contact }) => {
     const isMd = useMediaQuery(THEME.breakpoints.up('md'));
 
     const { picture, ...contactData } = contact;
@@ -24,8 +24,8 @@ const Contact: React.FC<{ contact: PopulatedContactInterface }> = ({ contact }) 
                     )}
                 </Container>
                 <img
-                    alt={picture?.data.attributes.alternativeText}
-                    src={`${process.env.REACT_APP_BASE_URL}${contact.picture?.data.attributes.url}`}
+                    alt={picture?.alternativeText}
+                    src={`${process.env.REACT_APP_BASE_URL}${contact.picture?.url}`}
                     style={{ borderRadius: 10, width: isMd ? "50%" : "100%" }}
                 />
             </Box>

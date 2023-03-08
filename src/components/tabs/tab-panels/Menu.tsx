@@ -15,6 +15,7 @@ const Menu: React.FC<{ menu: Array<Dish> }> = ({ menu }) => {
                     <InfoOutlined />
                 </IconButton>
             </Tooltip>
+            <Typography variant='h2'>Salate</Typography>
             {menu.map((dish: Dish, index) => (
                 <Box key={index}>
                     <Grid container spacing={2}>

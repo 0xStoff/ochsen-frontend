@@ -1,7 +1,9 @@
 export interface Dish {
+    id: number;
     course: string;
     side: string | null;
     price: number;
+    category: string | null;
 }
 
 export interface Category {

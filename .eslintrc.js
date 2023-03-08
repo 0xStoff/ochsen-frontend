@@ -13,10 +13,6 @@ module.exports = {
                 project: './tsconfig.json',
             },
             alias: {
-                map: [
-                    // ['@', './src'],
-                    // ['@config', './src/config'],
-                ],
                 extensions: ['.ts', '.js', '.jsx', '.json']
             },
         },
@@ -56,49 +52,24 @@ module.exports = {
                 'no-return-await': ['error'],
                 'no-await-in-loop': ['error'],
                 'require-atomic-updates': ['error'],
-
                 '@typescript-eslint/no-this-alias': 'off',
-
                 'import/prefer-default-export': 'off',
-
                 '@typescript-eslint/member-delimiter-style': ['error'],
-
                 '@typescript-eslint/no-empty-function': 'off',
-
                 'no-shadow': 'off',
                 '@typescript-eslint/no-shadow': ['error'],
-
                 'no-unused-vars': 'off',
                 '@typescript-eslint/no-unused-vars': ['warn'],
-
                 "import/named": "off",
                 "import/namespace": "off",
                 "import/default": "off",
                 "import/export": "off",
                 "import/no-named-as-default": "off",
                 "import/no-named-as-default-member": "off",
-                // "@typescript-eslint/no-unused-vars": [
-                //     "error",
-                //     {
-                //         "varsIgnorePattern": "^React$",
-                //         "argsIgnorePattern": "^_"
-                //     }
-                // ],
-                // "@typescript-eslint/no-unused-vars-experimental": [
-                //     "error",
-                //     {
-                //         "ignoreArgsIfArgsAfterAreUsed": true,
-                //         "ignoredNamesRegex": "^_"
-                //     }
-                // ],
                 "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }],
-
-
                 'no-spaced-func': 'off',
                 'func-call-spacing': 'off',
                 '@typescript-eslint/func-call-spacing': 'error',
-
-
                 "react/jsx-boolean-value": ["error", "never"],
                 "react/jsx-curly-brace-presence": ["error", {"props": "never", "children": "never"}],
                 "react/jsx-filename-extension": ["error", {"extensions": [".tsx", ".jsx"]}],
@@ -131,10 +102,6 @@ module.exports = {
                 "react/prop-types": "off",
                 "react-hooks/rules-of-hooks": "error",
                 "react-hooks/exhaustive-deps": "warn",
-
-
-                // 'no-console': process.env.NODE_ENV === 'production' ? ['error', { allow: ['warn', 'error'] }] : 'off',
-                // 'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
                 'max-len': ['error', {
                     code: 120,
                     tabWidth: 2,
@@ -145,22 +112,17 @@ module.exports = {
                     ignoreTemplateLiterals: true,
                     ignoreRegExpLiterals: true,
                 }],
-
                 'array-element-newline': ['error', {
                     ArrayExpression: 'consistent',
                     ArrayPattern: {minItems: 3},
                 }],
-
                 'array-bracket-newline': ['error', 'consistent'],
-
                 'object-curly-newline': ['error', {
                     multiline: true,
                     consistent: true,
                 }],
-
                 'no-param-reassign': ['error', {props: false}],
                 'newline-per-chained-call': ['error', {ignoreChainWithDepth: 5}],
-
             },
         },
     ],

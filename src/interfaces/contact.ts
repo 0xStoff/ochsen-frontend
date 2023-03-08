@@ -1,4 +1,3 @@
-import type { PopulatedResponseObject } from "./menu";
 
 export type ContactInterface = {
     title: string;
@@ -6,6 +5,7 @@ export type ContactInterface = {
     street: string;
     postal: string;
     phone: string;
+    picture: PictureInterface | null;
 }
 
 export type PictureInterface = {
@@ -48,15 +48,6 @@ export type PictureInterface = {
     provider_metadata: any;
     createdAt: string;
     updatedAt: string;
-}
-
-export type PopulatedContactInterface = {
-    title: string;
-    name: string;
-    street: string;
-    postal: string;
-    phone: string;
-    picture: PopulatedResponseObject<PictureInterface> | null;
 }
 
 
