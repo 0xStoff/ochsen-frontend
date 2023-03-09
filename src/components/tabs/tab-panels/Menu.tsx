@@ -17,6 +17,7 @@ import { MENU } from "../../../config/text";
 import type React from "react";
 import { THEME } from "../../../config/theme";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useHomepage } from "../../../hooks/useData";
 
 
 const TooltipPdfMenu = () => (
@@ -68,12 +69,13 @@ const AccordionMenu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
 
 
 const Menu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
+    const [homepage] = useHomepage();
     return (
         <Box>
             <TooltipPdfMenu />
             <AccordionMenu menu={menu} />
             <Container sx={{ marginTop: 3 }}>
-                <Typography variant='caption'>* Preis- und Sortimentsänderungen vorbehalten</Typography>
+                <Typography variant='caption'>{homepage.caption}</Typography>
             </Container>
         </Box>
     )

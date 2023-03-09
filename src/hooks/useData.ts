@@ -32,7 +32,8 @@ export const useHomepage = () => {
     return useData<HomepageInterface>({
         event: '',
         title: '',
-        claim: ''
+        claim: '',
+        caption: ''
     }, fetchHomepage)
 };
 
