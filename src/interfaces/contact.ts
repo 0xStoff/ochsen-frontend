@@ -1,13 +1,3 @@
-
-export type ContactInterface = {
-    title: string;
-    name: string;
-    street: string;
-    postal: string;
-    phone: string;
-    picture: PictureInterface | null;
-}
-
 export type PictureInterface = {
     name: string;
     alternativeText: string;
@@ -20,7 +10,7 @@ export type PictureInterface = {
             hash: string;
             ext: string;
             mime: string;
-            path: any;
+            path: string;
             width: number;
             height: number;
             size: number;
@@ -31,7 +21,7 @@ export type PictureInterface = {
             hash: string;
             ext: string;
             mime: string;
-            path: any;
+            path: string;
             width: number;
             height: number;
             size: number;
@@ -43,11 +33,20 @@ export type PictureInterface = {
     mime: string;
     size: number;
     url: string;
-    previewUrl: any;
+    previewUrl: string;
     provider: string;
-    provider_metadata: any;
+    provider_metadata: string;
     createdAt: string;
     updatedAt: string;
+}
+
+export type ContactInterface = {
+    title: string;
+    name: string;
+    street: string;
+    postal: string;
+    phone: string;
+    picture: PictureInterface | null;
 }
 
 

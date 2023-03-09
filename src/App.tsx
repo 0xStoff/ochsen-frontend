@@ -1,14 +1,16 @@
-import { CssBaseline, } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
-import { THEME } from "./config/theme";
-import { Home } from "./Home";
+import { Home } from "@/Home";
+import { THEME } from "@config/theme";
 
-export default function App() {
+export default function App () {
+
     return (
         <CssVarsProvider theme={THEME}>
             <CssBaseline />
-                <Home />
+            <Home />
         </CssVarsProvider>
     );
+
 }
 

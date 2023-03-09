@@ -1,6 +1,6 @@
 import type * as React from "react";
 import { Box, Divider, Typography } from "@mui/material";
-import type { OpeningHoursInterface } from "../../../interfaces/opening-hours-interface";
+import type { OpeningHoursInterface } from "@/interfaces/opening-hours-interface";
 
 const OpeningHours: React.FC<{ openingHours: Array<OpeningHoursInterface> }> = ({ openingHours }) => (
     <>

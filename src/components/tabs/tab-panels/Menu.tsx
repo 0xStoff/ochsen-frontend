@@ -11,27 +11,31 @@ import {
     Typography,
     useMediaQuery
 } from "@mui/material";
-import type { DishesByCategories } from "../../../interfaces/menu";
-import { InfoOutlined } from "@mui/icons-material";
-import { MENU } from "../../../config/text";
+import { ExpandMore, InfoOutlined } from "@mui/icons-material";
+import type { DishesByCategories } from "@/interfaces/menu";
+import { MENU } from "@/config/text";
 import type React from "react";
-import { THEME } from "../../../config/theme";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { THEME } from "@/config/theme";
+import { useHomepage } from "@/hooks/useData";
 
 
-const Menu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
+const TooltipPdfMenu = () => (
+    <Tooltip placement="right" title="Speisekarte als PDF herunterladen">
+        <IconButton href={`${process.env.REACT_APP_OCHSEN_MENU_URL}`} target="_blank">
+            <InfoOutlined />
+        </IconButton>
+    </Tooltip>
+)
+
+const AccordionMenu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
     const isSm = useMediaQuery(THEME.breakpoints.down('sm'));
+
     return (
-        <Box>
-            <Tooltip placement="right" title="Speisekarte als PDF herunterladen">
-                <IconButton href={`${process.env.REACT_APP_OCHSEN_MENU_URL}`} target="_blank">
-                    <InfoOutlined />
-                </IconButton>
-            </Tooltip>
+        <>
             {Object.entries(menu).map(([key, dishes]) => (
                 <Accordion key={key}>
                     <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
+                        expandIcon={<ExpandMore />}
                     >
                         <Typography variant='h3'>{key}</Typography>
                     </AccordionSummary>
@@ -58,8 +62,19 @@ const Menu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
                     </AccordionDetails>
                 </Accordion>
             ))}
-            <Container sx={{ marginTop: 3 }} >
-                <Typography variant='caption'>* Preis- und Sortimentsänderungen vorbehalten</Typography>
+        </>
+    )
+}
+
+
+const Menu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
+    const [homepage] = useHomepage();
+    return (
+        <Box>
+            <TooltipPdfMenu />
+            <AccordionMenu menu={menu} />
+            <Container sx={{ marginTop: 3 }}>
+                <Typography variant='caption'>{homepage.caption}</Typography>
             </Container>
         </Box>
     )

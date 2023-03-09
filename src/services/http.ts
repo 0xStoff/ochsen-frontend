@@ -1,7 +1,7 @@
-import type { DishesByCategories, ResponseArray, ResponseObject } from "@/interfaces/menu";
-import type { ContactInterface } from "@/interfaces/contact";
-import type { HomepageInterface } from "@/interfaces/event";
-import type { OpeningHoursInterface } from "@/interfaces/opening-hours-interface";
+import type { DishesByCategories, ResponseArray } from "@interfaces/menu";
+import type { ContactInterface } from "@interfaces/contact";
+import type { HomepageInterface } from "@interfaces/event";
+import type { OpeningHoursInterface } from "@interfaces/opening-hours-interface";
 
 
 export async function fetchContact(): Promise<ContactInterface> {
@@ -18,14 +18,7 @@ export async function fetchContact(): Promise<ContactInterface> {
 export async function fetchHomepage(): Promise<HomepageInterface & { id: number }> {
     try {
         const responseEvent = await fetch(`${process.env.REACT_APP_BASE_URL}/api/homepage`);
-        const eventJson: ResponseObject<HomepageInterface> = await responseEvent.json();
-        const { title, claim, event } = eventJson.data.attributes;
-        return {
-            id: eventJson.id,
-            event,
-            title,
-            claim
-        }
+        return await responseEvent.json();
     } catch (error) {
         console.error(error);
         throw new Error("error fetching homepage");

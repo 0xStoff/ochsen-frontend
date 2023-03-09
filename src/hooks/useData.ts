@@ -1,9 +1,9 @@
-import { fetchContact, fetchHomepage, fetchMenu, fetchOpeningHours } from "../services/http";
+import { fetchContact, fetchHomepage, fetchMenu, fetchOpeningHours } from "@services/http";
 import { useEffect, useState } from "react";
-import type { ContactInterface } from "@/interfaces/contact";
-import type { DishesByCategories } from "@/interfaces/menu";
-import type { HomepageInterface } from "@/interfaces/event";
-import type { OpeningHoursInterface } from "@/interfaces/opening-hours-interface";
+import type { ContactInterface } from "@interfaces/contact";
+import type { DishesByCategories } from "@interfaces/menu";
+import type { HomepageInterface } from "@interfaces/event";
+import type { OpeningHoursInterface } from "@interfaces/opening-hours-interface";
 
 export const useData = <T>(initialState: T, fetchData: () => Promise<T>): [T, Error | null] => {
     const [data, setData] = useState<T>(initialState);
@@ -15,7 +15,7 @@ export const useData = <T>(initialState: T, fetchData: () => Promise<T>): [T, Er
             setData(fetch);
         };
         getData().catch(setError)
-    }, []);
+    }, [fetchData]);
 
     return [data, error]
 };
@@ -30,9 +30,12 @@ export const useOpeningHours = () => {
 
 export const useHomepage = () => {
     return useData<HomepageInterface>({
+        id: null,
         event: '',
         title: '',
-        claim: ''
+        claim: '',
+        caption: '',
+        logo: null
     }, fetchHomepage)
 };
 

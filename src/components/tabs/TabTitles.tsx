@@ -1,8 +1,8 @@
 import type * as React from "react";
-import { StickyTabsListStyle, TabStyle } from "../../styles/Tabs";
-import type { TabPanelsType, TabTitleProps } from "../../interfaces/tabs";
-import { TAB_TITLES } from "../../config/text";
-import { ThemeButton } from "../ThemeButton";
+import { StickyTabsListStyle, TabStyle } from "@styles/Tabs";
+import type { TabPanelsType, TabTitleProps } from "@interfaces/tabs";
+import { TAB_TITLES } from "@config/text";
+import { ThemeButton } from "@components/ThemeButton";
 
 const TabTitles: React.FC<TabTitleProps> = ({ setActiveTab }) => (
     <StickyTabsListStyle>
