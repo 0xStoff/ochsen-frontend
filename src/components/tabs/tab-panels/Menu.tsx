@@ -11,13 +11,12 @@ import {
     Typography,
     useMediaQuery
 } from "@mui/material";
-import type { DishesByCategories } from "../../../interfaces/menu";
-import { InfoOutlined } from "@mui/icons-material";
-import { MENU } from "../../../config/text";
+import { ExpandMore, InfoOutlined } from "@mui/icons-material";
+import type { DishesByCategories } from "@/interfaces/menu";
+import { MENU } from "@/config/text";
 import type React from "react";
-import { THEME } from "../../../config/theme";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useHomepage } from "../../../hooks/useData";
+import { THEME } from "@/config/theme";
+import { useHomepage } from "@/hooks/useData";
 
 
 const TooltipPdfMenu = () => (
@@ -36,7 +35,7 @@ const AccordionMenu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
             {Object.entries(menu).map(([key, dishes]) => (
                 <Accordion key={key}>
                     <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
+                        expandIcon={<ExpandMore />}
                     >
                         <Typography variant='h3'>{key}</Typography>
                     </AccordionSummary>

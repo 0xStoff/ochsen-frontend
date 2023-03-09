@@ -1,4 +1,4 @@
-import { fetchContact, fetchHomepage, fetchMenu, fetchOpeningHours } from "../services/http";
+import { fetchContact, fetchHomepage, fetchMenu, fetchOpeningHours } from "@/services/http";
 import { useEffect, useState } from "react";
 import type { ContactInterface } from "@/interfaces/contact";
 import type { DishesByCategories } from "@/interfaces/menu";

@@ -1,6 +1,6 @@
 import * as React from "react";
-import { useEffect } from "react";
 import { Alert, Snackbar } from "@mui/material";
+import { useEffect } from "react";
 
 
 const ErrorSnackbar: React.FC<{ error: Error | null }> = ({ error }) => {

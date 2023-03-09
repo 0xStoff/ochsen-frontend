@@ -1,8 +1,8 @@
 import type * as React from "react";
-import type { Dish, DishesByCategories } from "./menu";
+import type { ContactInterface } from "./contact";
+import type { DishesByCategories } from "./menu";
 import type { OpeningHoursInterface } from "./opening-hours-interface";
 import type { ReactElement } from "react";
-import type { ContactInterface } from "./contact";
 
 export type TabPanelsType = {
     menu: ReactElement;

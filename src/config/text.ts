@@ -1,4 +1,4 @@
-import type { ContactInterface, MenuInterface, TypographyInterface } from "../interfaces/typography";
+import type { ContactInterface, MenuInterface, TypographyInterface } from "@/interfaces/typography";
 
 export const HOMEPAGE_TITLE: TypographyInterface = { variant: "h1" }
 export const HOMEPAGE_CLAIM: TypographyInterface = { variant: "h5" }

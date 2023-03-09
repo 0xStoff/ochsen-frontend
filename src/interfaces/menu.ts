@@ -6,9 +6,9 @@ export interface Dish {
     category: string | null;
 }
 
-export interface Category {
-    category: string | null;
-}
+// export interface Category {
+//     category: string | null;
+// }
 
 export interface ResponseArray<T> {
     data: Array<{
@@ -17,22 +17,22 @@ export interface ResponseArray<T> {
     }>;
 }
 
-export interface ResponseObject<T> {
-    id: number;
-    data: {
-        attributes: T;
-    };
-}
+// export interface ResponseObject<T> {
+//     id: number;
+//     data: {
+//         attributes: T;
+//     };
+// }
 
-export interface PopulatedResponseObject<T> {
-    data: {
-        id: number;
-        attributes: T;
-    };
-}
-
-export type PopulatedMenuResponse = Dish & {
-    category: PopulatedResponseObject<Category>;
-}
+// export interface PopulatedResponseObject<T> {
+//     data: {
+//         id: number;
+//         attributes: T;
+//     };
+// }
+//
+// export type PopulatedMenuResponse = Dish & {
+//     category: PopulatedResponseObject<Category>;
+// }
 
 export type DishesByCategories = { [key: string]: Array<Dish> }
