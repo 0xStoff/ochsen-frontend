@@ -19,15 +19,19 @@ import { THEME } from "../../../config/theme";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
-const Menu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
+const TooltipPdfMenu = () => (
+    <Tooltip placement="right" title="Speisekarte als PDF herunterladen">
+        <IconButton href={`${process.env.REACT_APP_OCHSEN_MENU_URL}`} target="_blank">
+            <InfoOutlined />
+        </IconButton>
+    </Tooltip>
+)
+
+const AccordionMenu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
     const isSm = useMediaQuery(THEME.breakpoints.down('sm'));
+
     return (
-        <Box>
-            <Tooltip placement="right" title="Speisekarte als PDF herunterladen">
-                <IconButton href={`${process.env.REACT_APP_OCHSEN_MENU_URL}`} target="_blank">
-                    <InfoOutlined />
-                </IconButton>
-            </Tooltip>
+        <>
             {Object.entries(menu).map(([key, dishes]) => (
                 <Accordion key={key}>
                     <AccordionSummary
@@ -58,7 +62,17 @@ const Menu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
                     </AccordionDetails>
                 </Accordion>
             ))}
-            <Container sx={{ marginTop: 3 }} >
+        </>
+    )
+}
+
+
+const Menu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
+    return (
+        <Box>
+            <TooltipPdfMenu />
+            <AccordionMenu menu={menu} />
+            <Container sx={{ marginTop: 3 }}>
                 <Typography variant='caption'>* Preis- und Sortimentsänderungen vorbehalten</Typography>
             </Container>
         </Box>
