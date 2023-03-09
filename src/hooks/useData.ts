@@ -15,7 +15,7 @@ export const useData = <T>(initialState: T, fetchData: () => Promise<T>): [T, Er
             setData(fetch);
         };
         getData().catch(setError)
-    }, []);
+    }, [fetchData]);
 
     return [data, error]
 };
@@ -30,10 +30,12 @@ export const useOpeningHours = () => {
 
 export const useHomepage = () => {
     return useData<HomepageInterface>({
+        id: null,
         event: '',
         title: '',
         claim: '',
-        caption: ''
+        caption: '',
+        logo: null
     }, fetchHomepage)
 };
 
