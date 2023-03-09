@@ -1,8 +1,8 @@
 import type * as React from "react";
 import { Box, Container, Typography, useMediaQuery } from "@mui/material";
-import { CONTACT_INFORMATION } from "@/config/text";
-import type { ContactInterface } from "@/interfaces/contact";
-import { THEME } from "@/config/theme";
+import { CONTACT_INFORMATION } from "@config/text";
+import type { ContactInterface } from "@interfaces/contact";
+import { THEME } from "@config/theme";
 
 const Contact: React.FC<{ contact: ContactInterface }> = ({ contact }) => {
     const isMd = useMediaQuery(THEME.breakpoints.up('md'));

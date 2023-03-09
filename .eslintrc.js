@@ -14,6 +14,9 @@ module.exports = {
     ],
     ignorePatterns: ["src/archive"],
     settings: {
+        react: {
+            version: 'detect',
+        },
         'import/parsers': {
             '@typescript-eslint/parser': ['.ts', '.tsx'],
         },
@@ -23,6 +26,14 @@ module.exports = {
                 project: './tsconfig.json',
             },
             alias: {
+                '@': './src',
+                '@config': './src/config',
+                '@interfaces': './src/interfaces',
+                '@hooks': './src/hooks',
+                '@services': './src/services',
+                '@styles': './src/styles',
+                '@components': './src/components',
+                '@tabs': './src/components/tabs',
                 extensions: ['.ts', '.js', '.jsx', '.json']
             },
         },

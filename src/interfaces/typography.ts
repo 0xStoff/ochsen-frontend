@@ -15,15 +15,15 @@ export interface MenuInterface {
     styles: CSSProperties;
 }
 
-export interface OpeningHoursInterface {
-    variant: {
-        days: Variant;
-        time1: Variant;
-        time2: Variant;
-    };
-    styles: CSSProperties;
-    data: Array<{ days: string; time1: string; time2: string }>;
-}
+// export interface OpeningHoursInterface {
+//     variant: {
+//         days: Variant;
+//         time1: Variant;
+//         time2: Variant;
+//     };
+//     styles: CSSProperties;
+//     data: Array<{ days: string; time1: string; time2: string }>;
+// }
 
 
 export interface ContactInterface {

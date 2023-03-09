@@ -1,10 +1,10 @@
 import * as React from "react";
-import type { TabPanelsType, TabRefs } from "@/interfaces/tabs";
-import { useContact, useMenuData, useOpeningHours } from "@/hooks/useData";
+import type { TabPanelsType, TabRefs } from "@interfaces/tabs";
+import { useContact, useMenuData, useOpeningHours } from "@hooks/useData";
 import { useEffect, useRef, useState } from "react";
-import ErrorSnackbar from "../ErrorSnackbar";
-import TabPanels from "./TabPanels";
-import TabTitles from "./TabTitles";
+import ErrorSnackbar from "@components/ErrorSnackbar";
+import TabPanels from "@tabs/TabPanels";
+import TabTitles from "@tabs/TabTitles";
 import TabsUnstyled from '@mui/base/TabsUnstyled';
 
 

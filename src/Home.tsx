@@ -1,10 +1,10 @@
 import type * as React from "react";
 import { Box, Container, Typography, useColorScheme, useMediaQuery } from "@mui/material";
-import { EVENT, HOMEPAGE_CLAIM, HOMEPAGE_TITLE } from "./config/text";
-import { THEME } from "./config/theme";
-import Tabs from "./components/tabs/Tabs";
-import type { Themes } from "./interfaces/themes";
-import { useHomepage } from "./hooks/useData";
+import { EVENT, HOMEPAGE_CLAIM, HOMEPAGE_TITLE } from "@config/text";
+import { THEME } from "@config/theme";
+import Tabs from "@tabs/Tabs";
+import type { Themes } from "@interfaces/themes";
+import { useHomepage } from "@hooks/useData";
 
 export const Home = () => {
     const { mode } = useColorScheme();

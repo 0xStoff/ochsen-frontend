@@ -1,7 +1,7 @@
-import type { DishesByCategories, ResponseArray } from "@/interfaces/menu";
-import type { ContactInterface } from "@/interfaces/contact";
-import type { HomepageInterface } from "@/interfaces/event";
-import type { OpeningHoursInterface } from "@/interfaces/opening-hours-interface";
+import type { DishesByCategories, ResponseArray } from "@interfaces/menu";
+import type { ContactInterface } from "@interfaces/contact";
+import type { HomepageInterface } from "@interfaces/event";
+import type { OpeningHoursInterface } from "@interfaces/opening-hours-interface";
 
 
 export async function fetchContact(): Promise<ContactInterface> {

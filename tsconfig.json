@@ -3,6 +3,13 @@
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"],
+      "@config/*": ["config/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@hooks/*": ["hooks/*"],
+      "@services/*": ["services/*"],
+      "@styles/*": ["styles/*"],
+      "@components/*": ["components/*"],
+      "@tabs/*": ["components/tabs/*"]
     },
     "target": "es6",
     "lib": [
