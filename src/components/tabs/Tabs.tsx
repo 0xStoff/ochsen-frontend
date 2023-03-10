@@ -28,6 +28,7 @@ export default function Tabs() {
         }
     }, [activeTab]);
 
+
     return (
         <TabsUnstyled value={activeTab}>
             <TabTitles setActiveTab={setActiveTab} />

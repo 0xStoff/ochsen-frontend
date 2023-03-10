@@ -3,6 +3,7 @@ import { StickyTabsListStyle, TabStyle } from "@styles/Tabs";
 import type { TabPanelsType, TabTitleProps } from "@interfaces/tabs";
 import { TAB_TITLES } from "@config/text";
 import { ThemeButton } from "@components/ThemeButton";
+import ShoppingCart from "@tabs/ShoppingCart";
 
 const TabTitles: React.FC<TabTitleProps> = ({ setActiveTab }) => (
     <StickyTabsListStyle>
@@ -18,6 +19,7 @@ const TabTitles: React.FC<TabTitleProps> = ({ setActiveTab }) => (
             </TabStyle>
         ))}
         <ThemeButton key="theme" />
+        <ShoppingCart />
     </StickyTabsListStyle>
 )
 

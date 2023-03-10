@@ -15,8 +15,9 @@ const TabPanels: React.FC<TabPanelProps> = ({ tabRefs, menu, openingHours, conta
                 }}
                 value={key as TabTitlesType}
             >
-                {element}
-            </TabPanelStyle>
+                 {element}
+             </TabPanelStyle>
+
         ))}
     </Container>
 )

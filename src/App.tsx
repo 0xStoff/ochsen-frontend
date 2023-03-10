@@ -3,8 +3,7 @@ import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/s
 import { Home } from "@/Home";
 import { THEME } from "@config/theme";
 
-export default function App () {
-
+export default function App() {
     return (
         <CssVarsProvider theme={THEME}>
             <CssBaseline />
