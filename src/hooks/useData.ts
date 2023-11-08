@@ -1,9 +1,11 @@
-import { fetchContact, fetchHomepage, fetchMenu, fetchOpeningHours } from "@services/http";
+import { fetchContact, fetchHomepage, fetchMenu, fetchOpeningHours, fetchReservations } from "@services/http";
 import { useEffect, useState } from "react";
 import type { ContactInterface } from "@interfaces/contact";
 import type { DishesByCategories } from "@interfaces/menu";
 import type { HomepageInterface } from "@interfaces/event";
 import type { OpeningHoursInterface } from "@interfaces/opening-hours-interface";
+import type { ReservationInterface } from "@interfaces/reservation";
+import dayjs from "dayjs";
 
 export const useData = <T>(initialState: T, fetchData: () => Promise<T>): [T, Error | null] => {
     const [data, setData] = useState<T>(initialState);
@@ -49,4 +51,20 @@ export const useContact = () => {
         picture: null
     }, fetchContact)
 };
+
+
+export const useReservation = () => {
+    return useData<Array<ReservationInterface>>([{
+        id: null,
+        name: '',
+        phone: '',
+        email: '',
+        date: null,
+        // time: '',
+        peopleCount: null,
+        tableNumber: null,
+        specialRequests: '',
+    }], fetchReservations)
+};
+
 

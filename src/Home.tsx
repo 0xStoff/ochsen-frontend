@@ -12,7 +12,7 @@ export const Home = () => {
     const isMd = useMediaQuery(THEME.breakpoints.up('md'));
 
     return (
-        <Box>
+    <Box>
             <Container sx={{
                 display: "flex",
                 flexDirection: isMd ? 'row' : 'column',

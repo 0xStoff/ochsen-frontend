@@ -87,7 +87,7 @@ module.exports = {
         "react/jsx-no-script-url": "error",
         "react/jsx-no-useless-fragment": "error",
         "react/jsx-pascal-case": "error",
-        "react/jsx-props-no-spreading": ["error", { "exceptions": ["Component", "ComponentChild"] }],
+        // "react/jsx-props-no-spreading": ["error", { "exceptions": ["Component", "ComponentChild"] }],
         "react/jsx-sort-props": ["error", { "shorthandFirst": true }],
         "react/jsx-tag-spacing": ["error", {
             "closingSlash": "never",

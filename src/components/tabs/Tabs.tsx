@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { TabPanelsType, TabRefs } from "@interfaces/tabs";
-import { useContact, useMenuData, useOpeningHours } from "@hooks/useData";
+import { useContact, useMenuData, useOpeningHours, useReservation } from "@hooks/useData";
 import { useEffect, useRef, useState } from "react";
 import ErrorSnackbar from "@components/ErrorSnackbar";
 import TabPanels from "@tabs/TabPanels";
@@ -12,13 +12,15 @@ export default function Tabs() {
     const tabRefs = useRef<TabRefs>({
         menu: null,
         openingHours: null,
-        contact: null
+        contact: null,
+        reservation : null
     });
     const [activeTab, setActiveTab] = useState<keyof TabPanelsType | ''>('');
 
     const [menu, errorMenu] = useMenuData()
     const [openingHours, errorOpeningHours] = useOpeningHours()
     const [contact, errorContact] = useContact()
+    const [reservation, errorReservation] = useReservation()
 
 
     useEffect(() => {
@@ -31,7 +33,12 @@ export default function Tabs() {
     return (
         <TabsUnstyled value={activeTab}>
             <TabTitles setActiveTab={setActiveTab} />
-            <TabPanels contact={contact} menu={menu} openingHours={openingHours} tabRefs={tabRefs} />
+            <TabPanels
+                contact={contact}
+                menu={menu}
+                openingHours={openingHours}
+                reservation={reservation}
+                tabRefs={tabRefs} />
             <ErrorSnackbar error={errorMenu || errorContact || errorOpeningHours} />
         </TabsUnstyled>
     );

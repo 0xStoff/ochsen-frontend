@@ -3,11 +3,13 @@ import type { ContactInterface } from "@interfaces/contact";
 import type { DishesByCategories } from "@interfaces/menu";
 import type { OpeningHoursInterface } from "@interfaces/opening-hours-interface";
 import type { ReactElement } from "react";
+import type { ReservationInterface } from "@interfaces/reservation";
 
 export type TabPanelsType = {
     menu: ReactElement;
     openingHours: ReactElement;
     contact: ReactElement;
+    reservation: ReactElement;
 };
 export type TabTitlesType = keyof TabPanelsType;
 export type DivWithOffsetTop = HTMLDivElement & { offsetTop?: number }
@@ -21,6 +23,7 @@ export interface TabPanelProps {
     menu: DishesByCategories;
     openingHours: Array<OpeningHoursInterface>;
     contact: ContactInterface;
+    reservation: Array<ReservationInterface>;
 }
 
 export interface TabTitleProps {
