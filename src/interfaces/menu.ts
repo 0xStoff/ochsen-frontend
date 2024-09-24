@@ -11,11 +11,9 @@ export interface Dish {
 // }
 
 export interface ResponseArray<T> {
-    data: Array<{
-        id: number;
-        attributes: T;
-    }>;
+    data: Array<T>;
 }
+
 
 // export interface ResponseObject<T> {
 //     id: number;

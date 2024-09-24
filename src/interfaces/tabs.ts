@@ -9,7 +9,7 @@ export type TabPanelsType = {
     menu: ReactElement;
     openingHours: ReactElement;
     contact: ReactElement;
-    reservation: ReactElement;
+    // reservation: ReactElement;
 };
 export type TabTitlesType = keyof TabPanelsType;
 export type DivWithOffsetTop = HTMLDivElement & { offsetTop?: number }
@@ -23,7 +23,7 @@ export interface TabPanelProps {
     menu: DishesByCategories;
     openingHours: Array<OpeningHoursInterface>;
     contact: ContactInterface;
-    reservation: Array<ReservationInterface>;
+    // reservation: Array<ReservationInterface>;
 }
 
 export interface TabTitleProps {

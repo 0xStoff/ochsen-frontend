@@ -39,7 +39,7 @@ const fetchReservation = (): Promise<Array<ReservationInterface>> => {
 export async function fetchReservations(): Promise<Array<ReservationInterface>> {
     try {
         const responseReservations = await fetch(`${process.env.REACT_APP_BASE_URL}/api/reservations`);
-        console.log(await responseReservations.json())
+        // console.log(await responseReservations.json())
         // return responseReservations.json()
         return [{
             id: 69,
@@ -73,7 +73,7 @@ export async function fetchOpeningHours(): Promise<Array<OpeningHoursInterface &
     try {
         const responseOpeningHours = await fetch(`${process.env.REACT_APP_BASE_URL}/api/opening-hours`);
         const openingHoursJson: ResponseArray<OpeningHoursInterface> = await responseOpeningHours.json();
-        return openingHoursJson.data.map(({ id, attributes: { title, subtitle1, subtitle2 } }) => ({
+        return openingHoursJson.data.map(({ id, title, subtitle1, subtitle2 }) => ({
             id,
             title,
             subtitle1,

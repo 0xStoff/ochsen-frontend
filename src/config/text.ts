@@ -12,7 +12,7 @@ export const TAB_TITLES = {
     menu: "Speisekarte",
     openingHours: "Öffnungszeiten",
     contact: "Kontakt",
-    reservation: "Reservation"
+    // reservation: "Reservation"
 }
 export const CONTACT_INFORMATION: ContactInterface = {
     variant: 'h3',

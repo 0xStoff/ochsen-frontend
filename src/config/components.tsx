@@ -12,12 +12,12 @@ export const TAB_PANELS = (
     menu: DishesByCategories,
     openingHours: Array<OpeningHoursInterface>,
     contact: ContactInterface,
-    reservation: Array<ReservationInterface>
+    // reservation: Array<ReservationInterface>
 ) => ({
     "contact": <Contact contact={contact} />,
     "menu": <Menu menu={menu} />,
     "openingHours": <OpeningHours openingHours={openingHours} />,
-    "reservation": <Reservation reservation={reservation} />
+    // "reservation": <Reservation reservation={reservation} />
 })
 
 export const THEMEICONS = {

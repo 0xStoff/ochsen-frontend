@@ -5,9 +5,10 @@ import { TAB_PANELS } from "@config/components";
 import { TabPanelStyle } from "@styles/Tabs";
 
 
-const TabPanels: React.FC<TabPanelProps> = ({ tabRefs, menu, openingHours, contact, reservation }) => (
+const TabPanels: React.FC<TabPanelProps> = ({ tabRefs, menu, openingHours, contact }) => (
     <Container>
-        {Object.entries(TAB_PANELS(menu, openingHours, contact, reservation)).map(([key, element]) => (
+        {/*{Object.entries(TAB_PANELS(menu, openingHours, contact, reservation)).map(([key, element]) => (*/}
+            {Object.entries(TAB_PANELS(menu, openingHours, contact)).map(([key, element]) => (
             <TabPanelStyle
                 key={key}
                 ref={(el: DivWithOffsetTop) => {

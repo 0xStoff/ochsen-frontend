@@ -13,14 +13,14 @@ export default function Tabs() {
         menu: null,
         openingHours: null,
         contact: null,
-        reservation : null
+        // reservation : null
     });
     const [activeTab, setActiveTab] = useState<keyof TabPanelsType | ''>('');
 
     const [menu, errorMenu] = useMenuData()
     const [openingHours, errorOpeningHours] = useOpeningHours()
     const [contact, errorContact] = useContact()
-    const [reservation, errorReservation] = useReservation()
+    // const [reservation, errorReservation] = useReservation()
 
 
     useEffect(() => {
@@ -37,7 +37,7 @@ export default function Tabs() {
                 contact={contact}
                 menu={menu}
                 openingHours={openingHours}
-                reservation={reservation}
+                // reservation={reservation}
                 tabRefs={tabRefs} />
             <ErrorSnackbar error={errorMenu || errorContact || errorOpeningHours} />
         </TabsUnstyled>
