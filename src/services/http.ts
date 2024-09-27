@@ -70,21 +70,25 @@ export async function fetchHomepage(): Promise<HomepageInterface & { id: number 
 
 
 export async function fetchOpeningHours(): Promise<Array<OpeningHoursInterface & { id: number }>> {
+    const dayOrder = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+
     try {
         const responseOpeningHours = await fetch(`${process.env.REACT_APP_BASE_URL}/api/opening-hours`);
         const openingHoursJson: ResponseArray<OpeningHoursInterface> = await responseOpeningHours.json();
-        return openingHoursJson.data.map(({ id, title, subtitle1, subtitle2 }) => ({
-            id,
-            title,
-            subtitle1,
-            subtitle2,
-        }))
+
+        return openingHoursJson.data
+            .map(({ id, title, subtitle1, subtitle2 }) => ({
+                id,
+                title,
+                subtitle1,
+                subtitle2,
+            }))
+            .sort((a, b) => dayOrder.indexOf(a.title) - dayOrder.indexOf(b.title));
     } catch (error) {
         console.error(error);
         throw new Error("error fetching opening hours");
     }
 }
-
 export async function fetchMenu(): Promise<DishesByCategories> {
     try {
         const responseMenus = await fetch(`${process.env.REACT_APP_BASE_URL}/api/menus?populate=*`);
