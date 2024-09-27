@@ -18,7 +18,6 @@ import type React from "react";
 import { THEME } from "@/config/theme";
 import { useHomepage } from "@/hooks/useData";
 
-
 const TooltipPdfMenu = () => (
     <Tooltip placement="right" title="Speisekarte als PDF herunterladen">
         <IconButton href={`${process.env.REACT_APP_OCHSEN_MENU_URL}`} target="_blank">
@@ -42,19 +41,22 @@ const AccordionMenu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
                     <AccordionDetails>
                         {dishes.map(dish => (
                                 <Grid container key={dish.id}
-                                      sx={{ borderBottom: '1px solid rgba(155,155,155,0.2)' }}>
-                                    <Grid item xs={10}>
+                                      sx={{ alignItems: 'center', borderBottom: '1px solid rgba(155,155,155,0.2)' }}>
+                                    <Grid item sm={10} xs={9}>
                                         <Typography variant={MENU.variant.course}>{dish.course}</Typography>
                                         <Typography variant={MENU.variant.side}>{dish.side}</Typography>
                                     </Grid>
                                     <Grid
                                         item
-                                        sx={{ display: "flex", alignSelf: "center", justifyContent: "flex-end" }}
-                                        xs={2}>
+                                        sm={2}
+                                        sx={{ display: "flex", justifyContent: "flex-end", flexGrow: 1 }}
+                                        xs={3}>
                                         <Chip
                                             label={dish.price.toFixed(2)}
                                             size={isSm ? "small" : "medium"}
-                                            variant="outlined"></Chip>
+                                            sx={{ maxWidth: '100%' }}
+                                            variant="outlined"
+                                        />
                                     </Grid>
                                 </Grid>
                             )
@@ -80,5 +82,4 @@ const Menu: React.FC<{ menu: DishesByCategories }> = ({ menu }) => {
     )
 }
 
-
-export default Menu
+export default Menu;
